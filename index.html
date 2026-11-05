@@ -1,4 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Coaster Forge 2</title><meta name="theme-color" content="#233c35"><link rel="icon" type="image/svg+xml" href="./icon.svg"><style>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><title>Coaster Forge 2</title><meta content="#233c35" name="theme-color"/><link href="./icon.svg" rel="icon" type="image/svg+xml"/><style>
 :root{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#263e35;background:#b5c8bd;font-synthesis:none}*{box-sizing:border-box}body{margin:0;overflow:hidden;user-select:none}button,input{font:inherit}button{cursor:pointer;border:0}button:focus-visible,input:focus-visible{outline:3px solid #d39323;outline-offset:3px}button:disabled{opacity:.4;cursor:default}#world{position:fixed;inset:0}canvas{display:block;touch-action:none}header{position:fixed;top:20px;left:24px;right:24px;display:flex;align-items:center;gap:18px;pointer-events:none}header>*{pointer-events:auto}.brand{display:flex;align-items:center;gap:12px;background:#faf7ec;padding:13px 19px;border-radius:16px;box-shadow:0 8px 30px #203d3520}.brand svg{width:38px;height:38px}.brand b{display:block;font-size:17px;letter-spacing:-.6px}.brand small{font-size:10px;letter-spacing:2.5px}.badge{border-radius:5px;background:#f1bc4f;padding:2px 7px;margin-left:5px;font-size:14px}.project{margin-left:auto;background:#faf7ec;padding:12px 16px;border-radius:13px}.project input{width:180px;border:0;background:none;font-weight:650;color:#263e35;outline:none}.project small{display:block;font-size:10px;margin-top:3px;color:#65766d}nav{position:fixed;top:119px;left:24px;display:flex;flex-direction:column;gap:9px}nav button{width:76px;height:73px;border-radius:15px;background:#faf7ec;color:#67756b;box-shadow:0 5px 22px #203d3515;display:grid;place-content:center;gap:5px;font-size:11px;font-weight:650}nav button span{font-size:23px;line-height:23px}nav button.active{background:#263e35;color:#f8d680}.panel{position:fixed;top:119px;left:113px;width:292px;max-height:calc(100dvh - 211px);overflow:auto;background:#faf7ecf5;border:1px solid #ffffff8a;border-radius:20px;padding:23px;box-shadow:0 18px 50px #23433220;backdrop-filter:blur(15px)}.panel[hidden]{display:none}h1{font-size:23px;letter-spacing:-.9px;margin:5px 0 8px}h2{font-size:12px;text-transform:uppercase;letter-spacing:1.6px;margin:22px 0 12px}.eyebrow{font-size:10px;letter-spacing:2px;color:#7e8779;font-weight:750}p{font-size:12px;color:#718071;line-height:1.65;margin:8px 0 17px}.separator{height:1px;background:#dce1d1;margin:19px 0}.row{display:flex;align-items:center;gap:8px}.row>*{flex:1}.btn{padding:12px 10px;border-radius:10px;background:#e9ebdf;color:#30483a;font-size:12px;font-weight:700}.btn.primary{background:#eeb747;color:#3f361e}.btn.dark{background:#2b473a;color:#faf7ec}.btn.wide{width:100%;margin-bottom:8px}.muted{color:#8b6956}.metric{background:#e9ecdf;padding:12px;border-radius:10px}.metric small{font-size:10px;display:block;color:#788171}.metric b{font-size:18px}.field{display:block;font-size:11px;font-weight:650;margin:15px 0 7px}.field output{float:right;font-variant-numeric:tabular-nums}input[type=range]{width:100%;accent-color:#b17b26}input[type=number]{width:100%;min-width:0;padding:9px;border-radius:7px;background:#fffdf6;border:1px solid #d6dcca;color:#2b473a}.axis label{font-size:10px;color:#7b8272}.chip{font-size:10px;background:#dfe7d4;padding:6px 9px;border-radius:6px;display:inline-block}footer{position:fixed;bottom:22px;left:24px;right:24px;display:flex;align-items:center;gap:10px;pointer-events:none}.help{border-radius:12px;padding:13px 16px;background:#faf7ecee;font-size:11px;color:#637465}.help b{color:#304a3d}.viewtools{margin-left:auto;display:flex;gap:7px;pointer-events:auto}.viewtools button{background:#faf7ec;border-radius:11px;padding:12px 15px;color:#365140;font-size:12px}#toast{position:fixed;top:90px;left:50%;transform:translateX(-50%);background:#273e35;color:#fff8e5;padding:12px 22px;border-radius:12px;font-size:12px;opacity:0;pointer-events:none;transition:opacity .2s}#toast.on{opacity:1}#speedHud{position:fixed;right:25px;top:119px;background:#263e35;color:#fff4d1;padding:18px 24px;border-radius:18px;text-align:right}#speedHud b{font-size:32px}#speedHud small{display:block;font-size:10px;letter-spacing:2px}#loading{position:fixed;inset:0;background:#f7f4e7;display:grid;place-content:center;z-index:9;text-align:center}#loading b{font-size:30px}#loading small{display:block;margin-top:10px}#saveList button{display:block;text-align:left;width:100%;margin:7px 0}#rideMode{display:flex;gap:6px;margin-bottom:14px}#rideMode button{flex:1}#hint{font-size:11px}#error{color:#9e4c35}label.toggle{display:flex;justify-content:space-between;align-items:center;font-size:12px;margin:20px 0}input[type=checkbox]{accent-color:#2d543f;width:17px;height:17px}#nodeLabel{position:fixed;pointer-events:none;background:#283f35;color:#fff3cf;border-radius:6px;padding:4px 8px;font-size:10px;transform:translate(-50%,-170%)}@media(max-width:700px){header{left:12px;right:12px;top:12px;gap:8px}.brand{padding:10px;gap:7px}.brand svg{width:28px;height:28px}.brand b{font-size:13px}.brand small{font-size:8px;letter-spacing:1.3px}.project{padding:9px}.project input{width:105px;font-size:12px}.project small{font-size:8px}nav{top:auto;bottom:14px;left:12px;right:12px;flex-direction:row;justify-content:center;gap:7px}nav button{height:57px;width:68px;gap:3px}nav button span{font-size:19px}.panel{top:86px;left:12px;width:254px;max-height:calc(100dvh - 178px);padding:18px}h1{font-size:21px}footer{bottom:83px;left:12px;right:12px}.help{display:none}.viewtools{gap:5px}.viewtools button{padding:10px}#speedHud{right:12px;top:86px;padding:10px}#speedHud b{font-size:22px}#toast{top:70px;width:max-content;max-width:94%;z-index:10}}
 
 :root{color:#eef7ff;background:#071019}header{top:12px;left:16px;right:16px;gap:12px}.brand,.project,.panel,.help,.viewtools button{background:linear-gradient(180deg,#102131f2,#0a151ff2);color:#eef7ff;border:1px solid #294358;box-shadow:0 16px 50px #0005;border-radius:12px}.brand small,.project small{color:#8ea6b8}.brand b{letter-spacing:1px}.badge{background:#45d7ff;color:#071019}.project input{color:#eef7ff}nav{top:96px;left:16px;right:16px;flex-direction:row;gap:7px}nav button{width:110px;height:42px;display:flex;align-items:center;justify-content:center;background:#142535;color:#b5cadb;border:1px solid #294358;border-radius:8px;box-shadow:none;font-size:12px;gap:9px}nav button span{font-size:20px}nav button.active{background:linear-gradient(135deg,#10a9dc,#347dff);color:white;border-color:#57d6ff}.panel{top:151px;left:16px;width:300px;max-height:calc(100dvh - 220px);padding:19px}h1{font-size:20px;letter-spacing:0}p,.eyebrow,.metric small,.axis label{color:#8ea6b8}.separator{background:#24384a}.metric{background:#07111a;border:1px solid #24384a;border-radius:8px}.metric b{color:#dff8ff}.chip{background:#163446;color:#6ce0ff}.btn{color:#eaf8ff;background:#142535;border:1px solid #294358;border-radius:8px}.btn.primary{background:linear-gradient(135deg,#10a9dc,#347dff);color:white;border-color:#57d6ff}.btn.dark{background:#1ba26a}.btn.muted{color:#ffb4c0}.btn:hover,.viewtools button:hover{border-color:#45d7ff;background:#1b3042}input[type=number]{background:#07111a;border-color:#29445a;color:white}input[type=range],input[type=checkbox]{accent-color:#45d7ff}.help b{color:#dff8ff}#nodeLabel,#toast{background:#102131;color:#6ce0ff;border:1px solid #294358}#speedHud{background:#0d1824ed;color:#eef7ff;border:1px solid #294358;top:151px}#loading{background:#071019;color:#dff8ff}footer{left:16px;right:16px;bottom:15px}@media(max-width:700px){header{left:10px;right:10px}.brand b{font-size:11px}.brand small{letter-spacing:1px}nav{top:auto;bottom:12px;left:10px;right:10px}nav button{width:auto;flex:1;height:48px;flex-direction:column;gap:2px;font-size:10px}.panel{top:86px;left:10px;width:250px;max-height:calc(100dvh - 172px)}footer{bottom:74px}#speedHud{top:86px}}
@@ -19,12 +20,20 @@ header:before,header:after,.titleBoard:before,.titleBoard:after{display:none}.ha
 .touchUI header{left:calc(10px + env(safe-area-inset-left));top:12px;right:auto}.touchUI .project{display:none}.touchUI .brand{padding:7px}.touchUI nav{left:calc(8px + env(safe-area-inset-left));right:auto;bottom:calc(8px + env(safe-area-inset-bottom));width:280px;gap:4px}.touchUI nav button{height:48px;min-width:0}.touchUI #touchControls{top:10px;left:42%;right:calc(68px + env(safe-area-inset-right));width:auto}.touchUI .touchModes button{min-width:56px;min-height:42px;font-size:11px}.touchUI #touchHint{display:none}.touchUI .touchHeight{right:calc(10px + env(safe-area-inset-right));top:75px;gap:6px}.touchUI .panel{top:12px;bottom:70px;left:calc(8px + env(safe-area-inset-left));right:auto;width:280px;height:auto;max-height:none;padding:46px 16px 16px}.touchUI.sheetOpen #closeSheet{top:18px;bottom:auto;left:calc(203px + env(safe-area-inset-left));right:auto;min-height:36px;padding:5px 9px}.touchUI.sheetOpen header{visibility:hidden}.touchUI #nodeActions{left:auto!important;right:calc(70px + env(safe-area-inset-right));bottom:calc(62px + env(safe-area-inset-bottom));transform:none;padding:6px;max-width:255px}.touchUI #nodeActions .nodeActionRow .btn{min-width:65px;min-height:40px;font-size:11px}.touchUI #nodeActions #add{min-height:40px;padding:5px 16px}.touchUI #nodeCaption{font-size:10px}.touchUI footer{bottom:calc(8px + env(safe-area-inset-bottom));right:calc(10px + env(safe-area-inset-right))}.touchUI .viewtools button{font-size:10px;padding:6px;min-height:38px}.touchUI #speedHud{top:75px;right:75px}.touchUI #toast{top:60px}.touchUI #titleScreen{padding:24px 16px}.touchUI .titleBoard{max-width:640px}.touchUI .titleBoard h1{font-size:38px}.touchUI .titleBoard .mapCard{min-height:66px}
 }
 
-</style></head><body><div id="world"></div><div id="touchControls"><button id="touchStop">■ End test</button><div class="touchModes"><button data-touch-mode="camera" class="active">Camera</button><button data-touch-mode="edit">Edit</button><button data-touch-mode="select">Select</button></div><small id="touchHint"></small><button id="cancelPower" hidden>Cancel</button><div class="touchHeight"><button id="touchUp" aria-label="Move camera up">↑</button><button id="touchDown" aria-label="Move camera down">↓</button></div></div><button id="closeSheet" aria-label="Close panel">Done ✓</button><div id="titleScreen"><div class="titleBoard"><small>THE WORKSHOP IS OPEN</small><h1>COASTER<br>FORGE <b>2</b></h1><p>A little lumber. A big idea. Build your next coaster.</p><button id="continueGame" class="btn primary wide">Continue building →</button><h2>The Plains</h2><div class="mapCards"><button class="mapCard active" data-map="plains"><span>🌳</span><b>Plains</b><small>Green hills & countryside</small></button></div><button id="startMap" class="btn wide">New coaster in Plains</button><h2>Saved coasters</h2><div id="namedSaves"></div><p class="menuNote">Your current work autosaves. Name and save coasters in Files to keep several designs.</p></div></div><div id="powerGhost" hidden></div><div id="loading"><b>COASTER FORGE 2</b><small>Making room for your next idea…</small></div><header><div class="brand"><svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="12" fill="#2b473a"/><path d="M6 31C13 31 12 11 21 11S26 32 32 25L39 17" stroke="#f0bf55" stroke-width="3"/><path d="M12 26V36M22 12V36M32 25V36" stroke="#f0bf55" stroke-opacity=".4"/></svg><div><small>COASTER DESIGN STUDIO</small><b>COASTER FORGE <span class="badge">2</span></b></div></div><div class="project"><input id="name" value="Untitled coaster" aria-label="Coaster name" maxlength="60"><small id="saveStatus">● Autosave ready</small></div></header><nav aria-label="Sections"><button data-tab="build" class="active"><span>⌁</span>Build</button><button data-tab="test"><span>▷</span>Test</button><button data-tab="files"><span>▱</span>Files</button><button data-tab="settings"><span>⚙</span>Settings</button></nav>
-<section class="panel" id="build"><div class="eyebrow">BUILD · PLAINS</div><h1>Track editor</h1><p>Select a node to shape your track. Extend it, then connect back to the station.</p><div class="row"><div class="metric"><small>TRACK LENGTH</small><b id="length">0 m</b></div><div class="metric"><small>EDITABLE NODES</small><b id="count">1</b></div></div><div class="separator"></div><h2>Track power</h2><div class="row"><button class="btn primary" id="chainTool">⛓ Drag chainlift</button><button class="btn" id="eraseTool">Drag to remove</button></div><p>Drag onto a track segment. Green shows where it will attach.</p><span class="chip" id="selection">NODE 01 SELECTED</span><p id="hint">Click a node, then use Extend above it. Shift-click or box select to move nodes together.</p><div class="row axis"><label>X · m<input id="x" type="number" min="-850" max="850" step="1"></label><label>Y · m<input id="y" type="number" min="1" max="90" step="1"></label><label>Z · m<input id="z" type="number" min="-850" max="850" step="1"></label></div><label class="field" for="height">Height <output id="heightOut">4 m</output></label><input type="range" id="height" min="1" max="90" step=".5"><div class="row" style="margin-top:17px"><button id="remove" class="btn muted">Remove</button></div><button id="loop" class="btn wide" style="margin-top:8px">Connect to station</button><div class="row"><button id="undo" class="btn">↶ Undo</button><button id="redo" class="btn">↷ Redo</button></div></section>
-<section class="panel" id="test" hidden><div class="eyebrow">THE PROVING GROUND</div><h1>Test your coaster</h1><p>A six-car train with gravity and rolling resistance. Give it a push, then let your track do the work.</p><label class="field" for="launch">Starting speed <output id="launchOut">12 m/s</output></label><input id="launch" type="range" min="3" max="30" value="12"><div class="separator"></div><div id="rideMode"><button class="btn" id="chase">Chase view</button></div><button class="btn primary wide" id="start">▷ Start test</button><button class="btn wide" id="stop" disabled>■ End test</button><p id="testStatus" role="status">Ready when you are.</p></section>
-<section class="panel" id="files" hidden><div class="eyebrow">YOUR DRAWING BOARD</div><h1>Keep your ideas.</h1><p>Your latest work saves automatically on this browser. Download a ride to keep it anywhere.</p><button id="saveNamed" class="btn primary wide">Save coaster</button><button id="download" class="btn primary wide">↓ Download ride (.cf2.json)</button><button id="html" class="btn wide">↓ Download game (.html)</button><button id="import" class="btn wide">↑ Open ride file</button><input type="file" id="file" accept=".json,.cf2.json,application/json" hidden><div class="separator"></div><h2>Recent autosaves</h2><div id="saveList"></div><div class="separator"></div><button class="btn wide muted" id="new">＋ New blank coaster</button><p id="error" role="status"></p></section>
-<section class="panel" id="settings" hidden><div class="eyebrow">LITTLE ADJUSTMENTS</div><h1>Your workspace.</h1><label class="toggle">Ground grid<input type="checkbox" id="grid" checked></label><label class="toggle">Show track supports<input type="checkbox" id="supports" checked></label><label class="toggle">Autosave<input type="checkbox" id="autosave" checked></label><div class="separator"></div><h2>Camera controls</h2><p>WASD to fly · Q / E down and up.<br>Right-drag to look · Shift to move faster.<br>Drag empty space to box select. Scroll to move forward.<br>Shift-click to add a node to the selection.<br><br>Select a node to edit it. The station stays fixed.</p><button class="btn wide" id="resetView">Reset camera</button><p>Coaster Forge 2 · Foundation build<br>Original cart, rider, station and plains designs.</p></section><div id="speedHud" hidden><small>TEST RUN</small><b id="speed">0</b> <span>m/s</span></div><div id="nodeLabel">NODE 01</div><footer><div class="help"><b>WASD</b> fly · <b>Right-drag</b> look &nbsp;·&nbsp; <b>Scroll</b> to zoom &nbsp;·&nbsp; <b>Drag a node</b> to build</div><div class="viewtools"><button id="menuButton">☰ Menu</button><button id="focus" title="Focus selected node">◎ Focus</button><button id="top">⊞ Top</button><button id="home">↗ Overview</button></div></footer><div id="nodeActions" hidden><div class="nodeActionRow"><button id="raise" class="btn">Raise</button><button id="descend" class="btn">Descend</button><span class="rotateAnchor"><button id="rotate" class="btn">Rotate</button><span id="rotationChoices" hidden><button id="counterclockwise" class="btn" title="15 degrees counterclockwise">↶ 15°</button><button id="clockwise" class="btn" title="15 degrees clockwise">↷ 15°</button></span></span></div><button id="add" class="btn primary">＋ Extend</button><button id="deselect" class="btn">Deselect</button><small id="nodeCaption">Node 1</small></div><div id="selectionRect"></div><div id="toast" role="status"></div><script type="module">
-const THREE=(()=>{
+/* A single wooden workshop toolbar, with one chain at each end. */
+header{position:fixed;top:23px;left:14px;right:14px;display:block;padding:0;background:repeating-linear-gradient(2deg,#ffffff06 0 3px,transparent 4px 10px),repeating-linear-gradient(0deg,#74472b 0 36px,#432918 37px 40px,#916039 41px 76px);border:3px solid #3c281b;border-radius:5px;box-shadow:inset 0 2px #d7a56980,0 6px 15px #0005;z-index:25;max-width:none;overflow:visible}.toolbarScroll{display:flex;align-items:center;gap:7px;overflow-x:auto;overflow-y:hidden;padding:8px 10px;scrollbar-width:thin;scrollbar-color:#c3965e #4e301e}.toolbarScroll>*{flex-shrink:0}.brand,.project{background:none!important;box-shadow:none!important;border:0!important;padding:0!important}.brand small{display:none}.brand b{font-size:16px;letter-spacing:.4px}.brand svg{width:30px;height:30px}.project input{width:180px;max-width:24vw;background:#32261de8;border:1px solid #b99364;border-radius:6px;padding:8px;font-size:13px}.project small{font-size:8px;display:block;margin-top:3px}.toolbarScroll .btn{width:auto!important;margin:0!important;min-height:36px;padding:7px 11px;font:700 11px system-ui;white-space:nowrap;border-radius:6px}.toolbarScroll .btn[aria-pressed=true]{background:#34785a;color:#e4ffe7;border-color:#9ddcaa}.toolbarScroll #optionsButton{font-size:17px}.hangingChain{top:-42px;z-index:2}.hangingChain.left{left:24px}.hangingChain.right{right:24px}.panel{top:108px;bottom:65px;max-height:calc(100dvh - 180px);width:290px;padding:16px;background-attachment:local}.panel:empty{display:none!important}.panel details{border-top:1px solid #c4985b60;padding:10px 0}.panel summary{cursor:pointer;font:700 13px Georgia;color:#ffe0a8;padding:5px 0 10px}.panel h1{font-size:22px}.panel details h1,.panel details .eyebrow{display:none}.toolGrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.toolGrid .btn{min-height:38px;padding:7px;font-size:11px}.toolGrid label{font-size:12px}.toolGrid input[type=color]{width:100%;height:32px;padding:2px;background:#523522;border:1px solid #b58d58}.nodeModeRow{display:flex;gap:5px;justify-content:center}.nodeModeRow .btn,#nodeActions>#remove{font:700 10px system-ui;padding:6px 9px;min-height:30px}.nodeModeRow #advancedMove[aria-pressed=true]{background:#315f68;color:#c9f7ff}.nodeModeRow #advancedMove{max-width:155px}.panel #loop{display:none!important}#nodeActions>#remove{color:#ffb9a4;background:#693a2b}#closeSheet{display:none}.titleBoard{margin-top:25px}.mapCard{width:100%;padding:0 0 16px;overflow:hidden;gap:8px;border:3px solid #dcb96f;transition:transform .18s,box-shadow .18s}.mapCard:hover{transform:translateY(-3px);box-shadow:0 7px 20px #0005}.mapCard>b{font-size:22px;letter-spacing:4px}.mapCard small{padding:0 12px}.mapCard #plainsPreview{height:210px;width:100%;background:#91d4ec}.mapCard #plainsPreview canvas{display:block;width:100%;height:100%;pointer-events:none}.titleBoard #mapPage>h2{margin:18px 0}#menuHub .btn{max-width:340px;margin:12px auto}#menuBack,#savesBack{margin-top:12px}#speedHud{top:110px}.panel label{display:block}input:disabled,button:disabled{opacity:.4}
+.touchUI header{top:calc(18px + env(safe-area-inset-top));left:calc(8px + env(safe-area-inset-left));right:calc(8px + env(safe-area-inset-right))}.touchUI .toolbarScroll{padding:7px;gap:6px}.touchUI .toolbarScroll .btn{min-height:42px;font-size:11px}.touchUI .brand b{font-size:12px}.touchUI .project{display:block}.touchUI .project input{width:130px;max-width:130px;font-size:16px}.touchUI .project small{max-width:130px;overflow:hidden;white-space:nowrap}.touchUI #touchControls{top:calc(99px + env(safe-area-inset-top))}.touchUI .panel{left:8px;right:8px;bottom:calc(65px + env(safe-area-inset-bottom));top:auto;width:auto;height:55dvh;max-height:55dvh;padding-top:48px}.touchUI.sheetOpen #closeSheet{position:fixed;display:block;left:auto;right:20px;top:auto;bottom:calc(65px + env(safe-area-inset-bottom) + 55dvh - 43px);min-height:36px;z-index:23}.touchUI #nodeActions{bottom:calc(80px + env(safe-area-inset-bottom));max-width:calc(100vw - 30px)}.touchUI .nodeModeRow .btn{min-height:40px;padding:6px 10px;font-size:11px}.touchUI #nodeActions>#remove{min-height:36px}.touchUI footer{bottom:calc(10px + env(safe-area-inset-bottom))}.touchUI #speedHud{top:160px}.touchUI .touchHeight{right:8px}.touchUI #touchStop{min-height:42px}.touchUI #titleScreen{padding-top:25px}.touchUI .titleBoard{margin-top:20px}
+@media(orientation:landscape) and (max-height:600px){.touchUI header{right:8px;left:8px;top:16px}.touchUI .brand{display:none}.touchUI .toolbarScroll{padding:5px}.touchUI #touchControls{top:78px;left:300px;right:65px;align-items:flex-end}.touchUI .touchModes button{min-height:38px}.touchUI .panel{left:8px;right:auto;top:78px;bottom:52px;width:280px;height:auto;max-height:none}.touchUI.sheetOpen header{visibility:visible}.touchUI.sheetOpen #closeSheet{left:208px;right:auto;top:84px;bottom:auto}.touchUI #nodeActions{right:65px;bottom:50px;left:auto!important;max-width:280px;gap:3px;padding:5px}.touchUI #nodeActions .nodeActionRow .btn{min-height:35px}.touchUI #nodeActions #add{min-height:35px}.touchUI .nodeModeRow .btn{min-height:34px;font-size:10px}.touchUI #nodeActions>#remove{min-height:30px}.touchUI #nodeCaption{display:none}.touchUI #rotationChoices{z-index:20}.touchUI #speedHud{top:126px;right:74px}.touchUI .touchHeight{top:85px}.touchUI footer{bottom:8px}.touchUI #plainsPreview{height:150px}.touchUI .titleBoard{max-width:600px}}
+
+@media(orientation:landscape) and (max-height:600px){
+.touchUI #touchControls{top:98px}.touchUI .panel{top:98px}.touchUI.sheetOpen #closeSheet{top:104px}.touchUI .touchHeight{top:98px}
+.touchUI #titleScreen{padding:30px 12px 12px}.touchUI .titleBoard{display:grid;grid-template-columns:185px minmax(0,1fr);column-gap:24px;align-items:center;max-width:760px;padding:18px 24px;margin-top:10px}.touchUI .titleBoard>small{grid-column:1;align-self:end}.touchUI .titleBoard>h1{grid-column:1;margin:8px 0;font-size:38px;align-self:start}.touchUI .titleBoard>#menuHub,.touchUI .titleBoard>#mapPage,.touchUI .titleBoard>#savedPage{grid-column:2;grid-row:1/4}.touchUI #menuHub .btn{margin:9px auto;min-height:44px}.touchUI #menuHub p{margin:8px 0 14px}.touchUI .titleBoard #mapPage>h2{font-size:18px;margin:4px 0 7px}.touchUI #menuBack,.touchUI #savesBack{margin:0;min-height:32px;padding:5px 10px}.touchUI .mapCard #plainsPreview{height:94px}.touchUI .mapCard{padding-bottom:7px;gap:4px}.touchUI .mapCard>b{font-size:17px}.touchUI .mapCard small{font-size:9px}.touchUI #startMap{min-height:40px;margin-top:9px}
+}
+</style></head><body><div id="world"></div><div id="touchControls"><button id="touchStop">■ End test</button><div class="touchModes"><button class="active" data-touch-mode="camera">Camera</button><button data-touch-mode="edit">Edit</button><button data-touch-mode="select">Select</button></div><small id="touchHint"></small><button hidden="" id="cancelPower">Cancel</button><div class="touchHeight"><button aria-label="Move camera up" id="touchUp">↑</button><button aria-label="Move camera down" id="touchDown">↓</button></div></div><button aria-label="Close panel" id="closeSheet">Done ✓</button><div id="titleScreen"><div class="titleBoard"><small>THE WORKSHOP</small><h1>COASTER<br/>FORGE <b>2</b></h1><div id="menuHub"><p>Build something worth riding.</p><button class="btn primary wide" id="continueGame">Continue building</button><button class="btn wide" id="newCoasterMenu">New Coaster</button><button class="btn wide" id="savedMenu">My Coasters</button></div><div hidden="" id="mapPage"><button class="btn" id="menuBack">← Back</button><h2>Choose your map</h2><button class="mapCard active" data-map="plains" id="plainsCard"><div aria-hidden="true" id="plainsPreview"></div><b>PLAINS</b><small>Rolling hills, cottages &amp; wide-open countryside</small></button><button class="btn primary wide" id="startMap">Build in Plains →</button></div><div hidden="" id="savedPage"><button class="btn" id="savesBack">← Back</button><h2>My Coasters</h2><div id="namedSaves"></div></div></div></div><div hidden="" id="powerGhost"></div><div id="loading"><b>COASTER FORGE 2</b><small>Making room for your next idea…</small></div><header><div class="toolbarScroll"><div class="brand"><svg fill="none" viewbox="0 0 44 44"><rect fill="#2b473a" height="44" rx="12" width="44"></rect><path d="M6 31C13 31 12 11 21 11S26 32 32 25L39 17" stroke="#f0bf55" stroke-width="3"></path><path d="M12 26V36M22 12V36M32 25V36" stroke="#f0bf55" stroke-opacity=".4"></path></svg><div><small>COASTER DESIGN STUDIO</small><b>COASTER FORGE <span class="badge">2</span></b></div></div><div class="project"><input aria-label="Coaster name" id="name" maxlength="60" value="Untitled coaster"/><small id="saveStatus">● Autosave ready</small></div><button class="btn" id="menuButton">☰ Menu</button><button class="btn" id="saveNamed">Save coaster</button><button class="btn" id="download">↓ Download ride (.cf2.json)</button><button class="btn" id="myCoasters">My Coasters</button><button aria-expanded="true" class="btn" id="buildStuff">Build Stuff</button><button class="btn primary" id="toolbarTest">▷ Test</button><button aria-pressed="false" class="btn" id="followTrainBtn">Follow Train: OFF</button><button class="btn" id="optionsButton">⚙</button></div></header>
+<section class="panel" id="build"><div class="eyebrow">BUILD · PLAINS</div><h1>Build Stuff</h1><p>Select nodes to build. Drag empty space to box select.</p><details open=""><summary>Build tools</summary><div class="toolGrid"><button class="btn" id="insertNode">Insert after</button><button class="btn" id="smoothRide">Smooth ride</button><button class="btn" id="cleanNodes">Node clean-up</button></div></details><div class="row"><div class="metric"><small>TRACK LENGTH</small><b id="length">0 m</b></div><div class="metric"><small>EDITABLE NODES</small><b id="count">1</b></div></div><div class="separator"></div><h2>Track power</h2><div class="row"><button class="btn primary" id="chainTool">⛓ Drag chainlift</button><button class="btn" id="eraseTool">Drag to remove</button></div><p>Drag onto a track segment. Green shows where it will attach.</p><span class="chip" id="selection">NODE 01 SELECTED</span><p id="hint">Click a node, then use Extend above it. Shift-click or box select to move nodes together.</p><div class="row axis"><label>X · m<input id="x" max="850" min="-850" step="1" type="number"/></label><label>Y · m<input id="y" max="90" min="1" step="1" type="number"/></label><label>Z · m<input id="z" max="850" min="-850" step="1" type="number"/></label></div><label class="field" for="height">Height <output id="heightOut">4 m</output></label><input id="height" max="90" min="1" step=".5" type="range"/><div class="row" style="margin-top:17px"></div><button class="btn wide" disabled="" hidden="" id="loop" style="margin-top:8px">Connect to station</button><div class="row"><button class="btn" id="undo">↶ Undo</button><button class="btn" id="redo">↷ Redo</button></div><details><summary>Track appearance</summary><div class="toolGrid"><label>Rails <input id="railColor" type="color" value="#f29143"/></label><label>Supports <input id="supportColor" type="color" value="#238f9b"/></label></div></details><details><summary>Camera speed</summary><label>Move <input id="camSpeed" max="500" min="5" type="range" value="100"/></label><label>Fast <input id="fastCamSpeed" max="1500" min="10" type="range" value="200"/></label></details></section>
+<section class="panel" hidden="" id="test"><div class="eyebrow">THE PROVING GROUND</div><h1>Test your coaster</h1><p>A six-car train with gravity and rolling resistance. Give it a push, then let your track do the work.</p><label class="field" for="launch">Starting speed <output id="launchOut">12 m/s</output></label><input id="launch" max="30" min="3" type="range" value="12"/><div class="separator"></div><div id="rideMode"><button class="btn" id="chase">Chase view</button></div><button class="btn primary wide" id="start">▷ Start test</button><button class="btn wide" disabled="" id="stop">■ End test</button><p id="testStatus" role="status">Ready when you are.</p></section>
+<section class="panel" hidden="" id="files"><div class="eyebrow">YOUR DRAWING BOARD</div><h1>Keep your ideas.</h1><p>Your latest work saves automatically on this browser. Download a ride to keep it anywhere.</p><button class="btn wide" id="html">↓ Download game (.html)</button><button class="btn wide" id="import">↑ Open ride file</button><input accept=".json,.cf2.json,application/json" hidden="" id="file" type="file"/><div class="separator"></div><h2>Recent autosaves</h2><div id="saveList"></div><div class="separator"></div><button class="btn wide muted" id="new">＋ New blank coaster</button><p id="error" role="status"></p></section>
+<section class="panel" hidden="" id="settings"><div class="eyebrow">LITTLE ADJUSTMENTS</div><h1>Your workspace.</h1><label class="toggle">Ground grid<input checked="" id="grid" type="checkbox"/></label><label class="toggle">Show track supports<input checked="" id="supports" type="checkbox"/></label><label class="toggle">Autosave<input checked="" id="autosave" type="checkbox"/></label><div class="separator"></div><h2>Camera controls</h2><p>WASD to fly · Q / E down and up.<br/>Right-drag to look · Shift to move faster.<br/>Drag empty space to box select. Scroll to move forward.<br/>Shift-click to add a node to the selection.<br/><br/>Select a node to edit it. The station stays fixed.</p><button class="btn wide" id="resetView">Reset camera</button><p>Coaster Forge 2 · Foundation build<br/>Original cart, rider, station and plains designs.</p></section><div hidden="" id="speedHud"><small>TEST RUN</small><b id="speed">0</b> <span>m/s</span></div><div id="nodeLabel">NODE 01</div><footer><div class="help"><b>WASD</b> fly · <b>Right-drag</b> look  ·  <b>Scroll</b> to zoom  ·  <b>Drag a node</b> to build</div><div class="viewtools"><button id="focus" title="Focus selected node">◎ Focus</button><button id="top">⊞ Top</button><button id="home">↗ Overview</button></div></footer><div hidden="" id="nodeActions"><div class="nodeActionRow"><button class="btn" id="raise">Raise</button><button class="btn" id="descend">Descend</button><span class="rotateAnchor"><button class="btn" id="rotate">Rotate</button><span hidden="" id="rotationChoices"><button class="btn" id="counterclockwise" title="15 degrees counterclockwise">↶ 15°</button><button class="btn" id="clockwise" title="15 degrees clockwise">↷ 15°</button></span></span></div><button class="btn primary" id="add">＋ Extend</button><div class="nodeModeRow"><button class="btn" id="deselect">Deselect</button><button aria-pressed="false" class="btn" id="advancedMove">Advanced Move</button></div><small id="nodeCaption">Node 1</small><button class="btn muted" id="remove">Remove</button></div><div id="selectionRect"></div><div id="toast" role="status"></div><script type="module">const THREE=(()=>{
 /**
  * @license
  * Copyright 2010-2024 Three.js Authors
@@ -54182,6 +54191,1615 @@ if ( typeof window !== 'undefined' ) {
 
 return {ACESFilmicToneMapping,AddEquation,AddOperation,AdditiveAnimationBlendMode,AdditiveBlending,AgXToneMapping,AlphaFormat,AlwaysCompare,AlwaysDepth,AlwaysStencilFunc,AmbientLight,AnimationAction,AnimationClip,AnimationLoader,AnimationMixer,AnimationObjectGroup,AnimationUtils,ArcCurve,ArrayCamera,ArrowHelper,AttachedBindMode,Audio,AudioAnalyser,AudioContext,AudioListener,AudioLoader,AxesHelper,BackSide,BasicDepthPacking,BasicShadowMap,BatchedMesh,Bone,BooleanKeyframeTrack,Box2,Box3,Box3Helper,BoxGeometry,BoxHelper,BufferAttribute,BufferGeometry,BufferGeometryLoader,ByteType,Cache,Camera,CameraHelper,CanvasTexture,CapsuleGeometry,CatmullRomCurve3,CineonToneMapping,CircleGeometry,ClampToEdgeWrapping,Clock,Color,ColorKeyframeTrack,ColorManagement,CompressedArrayTexture,CompressedCubeTexture,CompressedTexture,CompressedTextureLoader,ConeGeometry,ConstantAlphaFactor,ConstantColorFactor,Controls,CubeCamera,CubeReflectionMapping,CubeRefractionMapping,CubeTexture,CubeTextureLoader,CubeUVReflectionMapping,CubicBezierCurve,CubicBezierCurve3,CubicInterpolant,CullFaceBack,CullFaceFront,CullFaceFrontBack,CullFaceNone,Curve,CurvePath,CustomBlending,CustomToneMapping,CylinderGeometry,Cylindrical,Data3DTexture,DataArrayTexture,DataTexture,DataTextureLoader,DataUtils,DecrementStencilOp,DecrementWrapStencilOp,DefaultLoadingManager,DepthFormat,DepthStencilFormat,DepthTexture,DetachedBindMode,DirectionalLight,DirectionalLightHelper,DiscreteInterpolant,DisplayP3ColorSpace,DodecahedronGeometry,DoubleSide,DstAlphaFactor,DstColorFactor,DynamicCopyUsage,DynamicDrawUsage,DynamicReadUsage,EdgesGeometry,EllipseCurve,EqualCompare,EqualDepth,EqualStencilFunc,EquirectangularReflectionMapping,EquirectangularRefractionMapping,Euler,EventDispatcher,ExtrudeGeometry,FileLoader,Float16BufferAttribute,Float32BufferAttribute,FloatType,Fog,FogExp2,FramebufferTexture,FrontSide,Frustum,GLBufferAttribute,GLSL1,GLSL3,GreaterCompare,GreaterDepth,GreaterEqualCompare,GreaterEqualDepth,GreaterEqualStencilFunc,GreaterStencilFunc,GridHelper,Group,HalfFloatType,HemisphereLight,HemisphereLightHelper,IcosahedronGeometry,ImageBitmapLoader,ImageLoader,ImageUtils,IncrementStencilOp,IncrementWrapStencilOp,InstancedBufferAttribute,InstancedBufferGeometry,InstancedInterleavedBuffer,InstancedMesh,Int16BufferAttribute,Int32BufferAttribute,Int8BufferAttribute,IntType,InterleavedBuffer,InterleavedBufferAttribute,Interpolant,InterpolateDiscrete,InterpolateLinear,InterpolateSmooth,InvertStencilOp,KeepStencilOp,KeyframeTrack,LOD,LatheGeometry,Layers,LessCompare,LessDepth,LessEqualCompare,LessEqualDepth,LessEqualStencilFunc,LessStencilFunc,Light,LightProbe,Line,Line3,LineBasicMaterial,LineCurve,LineCurve3,LineDashedMaterial,LineLoop,LineSegments,LinearDisplayP3ColorSpace,LinearFilter,LinearInterpolant,LinearMipMapLinearFilter,LinearMipMapNearestFilter,LinearMipmapLinearFilter,LinearMipmapNearestFilter,LinearSRGBColorSpace,LinearToneMapping,LinearTransfer,Loader,LoaderUtils,LoadingManager,LoopOnce,LoopPingPong,LoopRepeat,LuminanceAlphaFormat,LuminanceFormat,MOUSE,Material,MaterialLoader,MathUtils,Matrix2,Matrix3,Matrix4,MaxEquation,Mesh,MeshBasicMaterial,MeshDepthMaterial,MeshDistanceMaterial,MeshLambertMaterial,MeshMatcapMaterial,MeshNormalMaterial,MeshPhongMaterial,MeshPhysicalMaterial,MeshStandardMaterial,MeshToonMaterial,MinEquation,MirroredRepeatWrapping,MixOperation,MultiplyBlending,MultiplyOperation,NearestFilter,NearestMipMapLinearFilter,NearestMipMapNearestFilter,NearestMipmapLinearFilter,NearestMipmapNearestFilter,NeutralToneMapping,NeverCompare,NeverDepth,NeverStencilFunc,NoBlending,NoColorSpace,NoToneMapping,NormalAnimationBlendMode,NormalBlending,NotEqualCompare,NotEqualDepth,NotEqualStencilFunc,NumberKeyframeTrack,Object3D,ObjectLoader,ObjectSpaceNormalMap,OctahedronGeometry,OneFactor,OneMinusConstantAlphaFactor,OneMinusConstantColorFactor,OneMinusDstAlphaFactor,OneMinusDstColorFactor,OneMinusSrcAlphaFactor,OneMinusSrcColorFactor,OrthographicCamera,P3Primaries,PCFShadowMap,PCFSoftShadowMap,PMREMGenerator,Path,PerspectiveCamera,Plane,PlaneGeometry,PlaneHelper,PointLight,PointLightHelper,Points,PointsMaterial,PolarGridHelper,PolyhedronGeometry,PositionalAudio,PropertyBinding,PropertyMixer,QuadraticBezierCurve,QuadraticBezierCurve3,Quaternion,QuaternionKeyframeTrack,QuaternionLinearInterpolant,RED_GREEN_RGTC2_Format,RED_RGTC1_Format,REVISION,RGBADepthPacking,RGBAFormat,RGBAIntegerFormat,RGBA_ASTC_10x10_Format,RGBA_ASTC_10x5_Format,RGBA_ASTC_10x6_Format,RGBA_ASTC_10x8_Format,RGBA_ASTC_12x10_Format,RGBA_ASTC_12x12_Format,RGBA_ASTC_4x4_Format,RGBA_ASTC_5x4_Format,RGBA_ASTC_5x5_Format,RGBA_ASTC_6x5_Format,RGBA_ASTC_6x6_Format,RGBA_ASTC_8x5_Format,RGBA_ASTC_8x6_Format,RGBA_ASTC_8x8_Format,RGBA_BPTC_Format,RGBA_ETC2_EAC_Format,RGBA_PVRTC_2BPPV1_Format,RGBA_PVRTC_4BPPV1_Format,RGBA_S3TC_DXT1_Format,RGBA_S3TC_DXT3_Format,RGBA_S3TC_DXT5_Format,RGBDepthPacking,RGBFormat,RGBIntegerFormat,RGB_BPTC_SIGNED_Format,RGB_BPTC_UNSIGNED_Format,RGB_ETC1_Format,RGB_ETC2_Format,RGB_PVRTC_2BPPV1_Format,RGB_PVRTC_4BPPV1_Format,RGB_S3TC_DXT1_Format,RGDepthPacking,RGFormat,RGIntegerFormat,RawShaderMaterial,Ray,Raycaster,Rec709Primaries,RectAreaLight,RedFormat,RedIntegerFormat,ReinhardToneMapping,RenderTarget,RepeatWrapping,ReplaceStencilOp,ReverseSubtractEquation,RingGeometry,SIGNED_RED_GREEN_RGTC2_Format,SIGNED_RED_RGTC1_Format,SRGBColorSpace,SRGBTransfer,Scene,ShaderChunk,ShaderLib,ShaderMaterial,ShadowMaterial,Shape,ShapeGeometry,ShapePath,ShapeUtils,ShortType,Skeleton,SkeletonHelper,SkinnedMesh,Source,Sphere,SphereGeometry,Spherical,SphericalHarmonics3,SplineCurve,SpotLight,SpotLightHelper,Sprite,SpriteMaterial,SrcAlphaFactor,SrcAlphaSaturateFactor,SrcColorFactor,StaticCopyUsage,StaticDrawUsage,StaticReadUsage,StereoCamera,StreamCopyUsage,StreamDrawUsage,StreamReadUsage,StringKeyframeTrack,SubtractEquation,SubtractiveBlending,TOUCH,TangentSpaceNormalMap,TetrahedronGeometry,Texture,TextureLoader,TextureUtils,TorusGeometry,TorusKnotGeometry,Triangle,TriangleFanDrawMode,TriangleStripDrawMode,TrianglesDrawMode,TubeGeometry,UVMapping,Uint16BufferAttribute,Uint32BufferAttribute,Uint8BufferAttribute,Uint8ClampedBufferAttribute,Uniform,UniformsGroup,UniformsLib,UniformsUtils,UnsignedByteType,UnsignedInt248Type,UnsignedInt5999Type,UnsignedIntType,UnsignedShort4444Type,UnsignedShort5551Type,UnsignedShortType,VSMShadowMap,Vector2,Vector3,Vector4,VectorKeyframeTrack,VideoTexture,WebGL3DRenderTarget,WebGLArrayRenderTarget,WebGLCoordinateSystem,WebGLCubeRenderTarget,WebGLMultipleRenderTargets,WebGLRenderTarget,WebGLRenderer,WebGLUtils,WebGPUCoordinateSystem,WireframeGeometry,WrapAroundEnding,ZeroCurvatureEnding,ZeroFactor,ZeroSlopeEnding,ZeroStencilOp,createCanvasElement};})();
 
+const {TransformControls}=(()=>{const {
+	BoxGeometry,
+	BufferGeometry,
+	Controls,
+	CylinderGeometry,
+	DoubleSide,
+	Euler,
+	Float32BufferAttribute,
+	Line,
+	LineBasicMaterial,
+	Matrix4,
+	Mesh,
+	MeshBasicMaterial,
+	Object3D,
+	OctahedronGeometry,
+	PlaneGeometry,
+	Quaternion,
+	Raycaster,
+	SphereGeometry,
+	TorusGeometry,
+	Vector3
+}=THREE;
+
+const _raycaster = new Raycaster();
+
+const _tempVector = new Vector3();
+const _tempVector2 = new Vector3();
+const _tempQuaternion = new Quaternion();
+const _unit = {
+	X: new Vector3( 1, 0, 0 ),
+	Y: new Vector3( 0, 1, 0 ),
+	Z: new Vector3( 0, 0, 1 )
+};
+
+const _changeEvent = { type: 'change' };
+const _mouseDownEvent = { type: 'mouseDown', mode: null };
+const _mouseUpEvent = { type: 'mouseUp', mode: null };
+const _objectChangeEvent = { type: 'objectChange' };
+
+class TransformControls extends Controls {
+
+	constructor( camera, domElement = null ) {
+
+		super( undefined, domElement );
+
+		const root = new TransformControlsRoot( this );
+		this._root = root;
+
+		const gizmo = new TransformControlsGizmo();
+		this._gizmo = gizmo;
+		root.add( gizmo );
+
+		const plane = new TransformControlsPlane();
+		this._plane = plane;
+		root.add( plane );
+
+		const scope = this;
+
+		// Defined getter, setter and store for a property
+		function defineProperty( propName, defaultValue ) {
+
+			let propValue = defaultValue;
+
+			Object.defineProperty( scope, propName, {
+
+				get: function () {
+
+					return propValue !== undefined ? propValue : defaultValue;
+
+				},
+
+				set: function ( value ) {
+
+					if ( propValue !== value ) {
+
+						propValue = value;
+						plane[ propName ] = value;
+						gizmo[ propName ] = value;
+
+						scope.dispatchEvent( { type: propName + '-changed', value: value } );
+						scope.dispatchEvent( _changeEvent );
+
+					}
+
+				}
+
+			} );
+
+			scope[ propName ] = defaultValue;
+			plane[ propName ] = defaultValue;
+			gizmo[ propName ] = defaultValue;
+
+		}
+
+		// Define properties with getters/setter
+		// Setting the defined property will automatically trigger change event
+		// Defined properties are passed down to gizmo and plane
+
+		defineProperty( 'camera', camera );
+		defineProperty( 'object', undefined );
+		defineProperty( 'enabled', true );
+		defineProperty( 'axis', null );
+		defineProperty( 'mode', 'translate' );
+		defineProperty( 'translationSnap', null );
+		defineProperty( 'rotationSnap', null );
+		defineProperty( 'scaleSnap', null );
+		defineProperty( 'space', 'world' );
+		defineProperty( 'size', 1 );
+		defineProperty( 'dragging', false );
+		defineProperty( 'showX', true );
+		defineProperty( 'showY', true );
+		defineProperty( 'showZ', true );
+
+		// Reusable utility variables
+
+		const worldPosition = new Vector3();
+		const worldPositionStart = new Vector3();
+		const worldQuaternion = new Quaternion();
+		const worldQuaternionStart = new Quaternion();
+		const cameraPosition = new Vector3();
+		const cameraQuaternion = new Quaternion();
+		const pointStart = new Vector3();
+		const pointEnd = new Vector3();
+		const rotationAxis = new Vector3();
+		const rotationAngle = 0;
+		const eye = new Vector3();
+
+		// TODO: remove properties unused in plane and gizmo
+
+		defineProperty( 'worldPosition', worldPosition );
+		defineProperty( 'worldPositionStart', worldPositionStart );
+		defineProperty( 'worldQuaternion', worldQuaternion );
+		defineProperty( 'worldQuaternionStart', worldQuaternionStart );
+		defineProperty( 'cameraPosition', cameraPosition );
+		defineProperty( 'cameraQuaternion', cameraQuaternion );
+		defineProperty( 'pointStart', pointStart );
+		defineProperty( 'pointEnd', pointEnd );
+		defineProperty( 'rotationAxis', rotationAxis );
+		defineProperty( 'rotationAngle', rotationAngle );
+		defineProperty( 'eye', eye );
+
+		this._offset = new Vector3();
+		this._startNorm = new Vector3();
+		this._endNorm = new Vector3();
+		this._cameraScale = new Vector3();
+
+		this._parentPosition = new Vector3();
+		this._parentQuaternion = new Quaternion();
+		this._parentQuaternionInv = new Quaternion();
+		this._parentScale = new Vector3();
+
+		this._worldScaleStart = new Vector3();
+		this._worldQuaternionInv = new Quaternion();
+		this._worldScale = new Vector3();
+
+		this._positionStart = new Vector3();
+		this._quaternionStart = new Quaternion();
+		this._scaleStart = new Vector3();
+
+		this._getPointer = getPointer.bind( this );
+		this._onPointerDown = onPointerDown.bind( this );
+		this._onPointerHover = onPointerHover.bind( this );
+		this._onPointerMove = onPointerMove.bind( this );
+		this._onPointerUp = onPointerUp.bind( this );
+
+		if ( domElement !== null ) {
+
+			this.connect();
+
+		}
+
+	}
+
+	connect() {
+
+		this.domElement.addEventListener( 'pointerdown', this._onPointerDown );
+		this.domElement.addEventListener( 'pointermove', this._onPointerHover );
+		this.domElement.addEventListener( 'pointerup', this._onPointerUp );
+
+		this.domElement.style.touchAction = 'none'; // disable touch scroll
+
+	}
+
+	disconnect() {
+
+		this.domElement.removeEventListener( 'pointerdown', this._onPointerDown );
+		this.domElement.removeEventListener( 'pointermove', this._onPointerHover );
+		this.domElement.removeEventListener( 'pointermove', this._onPointerMove );
+		this.domElement.removeEventListener( 'pointerup', this._onPointerUp );
+
+		this.domElement.style.touchAction = 'auto';
+
+	}
+
+	getHelper() {
+
+		return this._root;
+
+	}
+
+	pointerHover( pointer ) {
+
+		if ( this.object === undefined || this.dragging === true ) return;
+
+		if ( pointer !== null ) _raycaster.setFromCamera( pointer, this.camera );
+
+		const intersect = intersectObjectWithRay( this._gizmo.picker[ this.mode ], _raycaster );
+
+		if ( intersect ) {
+
+			this.axis = intersect.object.name;
+
+		} else {
+
+			this.axis = null;
+
+		}
+
+	}
+
+	pointerDown( pointer ) {
+
+		if ( this.object === undefined || this.dragging === true || ( pointer != null && pointer.button !== 0 ) ) return;
+
+		if ( this.axis !== null ) {
+
+			if ( pointer !== null ) _raycaster.setFromCamera( pointer, this.camera );
+
+			const planeIntersect = intersectObjectWithRay( this._plane, _raycaster, true );
+
+			if ( planeIntersect ) {
+
+				this.object.updateMatrixWorld();
+				this.object.parent.updateMatrixWorld();
+
+				this._positionStart.copy( this.object.position );
+				this._quaternionStart.copy( this.object.quaternion );
+				this._scaleStart.copy( this.object.scale );
+
+				this.object.matrixWorld.decompose( this.worldPositionStart, this.worldQuaternionStart, this._worldScaleStart );
+
+				this.pointStart.copy( planeIntersect.point ).sub( this.worldPositionStart );
+
+			}
+
+			this.dragging = true;
+			_mouseDownEvent.mode = this.mode;
+			this.dispatchEvent( _mouseDownEvent );
+
+		}
+
+	}
+
+	pointerMove( pointer ) {
+
+		const axis = this.axis;
+		const mode = this.mode;
+		const object = this.object;
+		let space = this.space;
+
+		if ( mode === 'scale' ) {
+
+			space = 'local';
+
+		} else if ( axis === 'E' || axis === 'XYZE' || axis === 'XYZ' ) {
+
+			space = 'world';
+
+		}
+
+		if ( object === undefined || axis === null || this.dragging === false || ( pointer !== null && pointer.button !== - 1 ) ) return;
+
+		if ( pointer !== null ) _raycaster.setFromCamera( pointer, this.camera );
+
+		const planeIntersect = intersectObjectWithRay( this._plane, _raycaster, true );
+
+		if ( ! planeIntersect ) return;
+
+		this.pointEnd.copy( planeIntersect.point ).sub( this.worldPositionStart );
+
+		if ( mode === 'translate' ) {
+
+			// Apply translate
+
+			this._offset.copy( this.pointEnd ).sub( this.pointStart );
+
+			if ( space === 'local' && axis !== 'XYZ' ) {
+
+				this._offset.applyQuaternion( this._worldQuaternionInv );
+
+			}
+
+			if ( axis.indexOf( 'X' ) === - 1 ) this._offset.x = 0;
+			if ( axis.indexOf( 'Y' ) === - 1 ) this._offset.y = 0;
+			if ( axis.indexOf( 'Z' ) === - 1 ) this._offset.z = 0;
+
+			if ( space === 'local' && axis !== 'XYZ' ) {
+
+				this._offset.applyQuaternion( this._quaternionStart ).divide( this._parentScale );
+
+			} else {
+
+				this._offset.applyQuaternion( this._parentQuaternionInv ).divide( this._parentScale );
+
+			}
+
+			object.position.copy( this._offset ).add( this._positionStart );
+
+			// Apply translation snap
+
+			if ( this.translationSnap ) {
+
+				if ( space === 'local' ) {
+
+					object.position.applyQuaternion( _tempQuaternion.copy( this._quaternionStart ).invert() );
+
+					if ( axis.search( 'X' ) !== - 1 ) {
+
+						object.position.x = Math.round( object.position.x / this.translationSnap ) * this.translationSnap;
+
+					}
+
+					if ( axis.search( 'Y' ) !== - 1 ) {
+
+						object.position.y = Math.round( object.position.y / this.translationSnap ) * this.translationSnap;
+
+					}
+
+					if ( axis.search( 'Z' ) !== - 1 ) {
+
+						object.position.z = Math.round( object.position.z / this.translationSnap ) * this.translationSnap;
+
+					}
+
+					object.position.applyQuaternion( this._quaternionStart );
+
+				}
+
+				if ( space === 'world' ) {
+
+					if ( object.parent ) {
+
+						object.position.add( _tempVector.setFromMatrixPosition( object.parent.matrixWorld ) );
+
+					}
+
+					if ( axis.search( 'X' ) !== - 1 ) {
+
+						object.position.x = Math.round( object.position.x / this.translationSnap ) * this.translationSnap;
+
+					}
+
+					if ( axis.search( 'Y' ) !== - 1 ) {
+
+						object.position.y = Math.round( object.position.y / this.translationSnap ) * this.translationSnap;
+
+					}
+
+					if ( axis.search( 'Z' ) !== - 1 ) {
+
+						object.position.z = Math.round( object.position.z / this.translationSnap ) * this.translationSnap;
+
+					}
+
+					if ( object.parent ) {
+
+						object.position.sub( _tempVector.setFromMatrixPosition( object.parent.matrixWorld ) );
+
+					}
+
+				}
+
+			}
+
+		} else if ( mode === 'scale' ) {
+
+			if ( axis.search( 'XYZ' ) !== - 1 ) {
+
+				let d = this.pointEnd.length() / this.pointStart.length();
+
+				if ( this.pointEnd.dot( this.pointStart ) < 0 ) d *= - 1;
+
+				_tempVector2.set( d, d, d );
+
+			} else {
+
+				_tempVector.copy( this.pointStart );
+				_tempVector2.copy( this.pointEnd );
+
+				_tempVector.applyQuaternion( this._worldQuaternionInv );
+				_tempVector2.applyQuaternion( this._worldQuaternionInv );
+
+				_tempVector2.divide( _tempVector );
+
+				if ( axis.search( 'X' ) === - 1 ) {
+
+					_tempVector2.x = 1;
+
+				}
+
+				if ( axis.search( 'Y' ) === - 1 ) {
+
+					_tempVector2.y = 1;
+
+				}
+
+				if ( axis.search( 'Z' ) === - 1 ) {
+
+					_tempVector2.z = 1;
+
+				}
+
+			}
+
+			// Apply scale
+
+			object.scale.copy( this._scaleStart ).multiply( _tempVector2 );
+
+			if ( this.scaleSnap ) {
+
+				if ( axis.search( 'X' ) !== - 1 ) {
+
+					object.scale.x = Math.round( object.scale.x / this.scaleSnap ) * this.scaleSnap || this.scaleSnap;
+
+				}
+
+				if ( axis.search( 'Y' ) !== - 1 ) {
+
+					object.scale.y = Math.round( object.scale.y / this.scaleSnap ) * this.scaleSnap || this.scaleSnap;
+
+				}
+
+				if ( axis.search( 'Z' ) !== - 1 ) {
+
+					object.scale.z = Math.round( object.scale.z / this.scaleSnap ) * this.scaleSnap || this.scaleSnap;
+
+				}
+
+			}
+
+		} else if ( mode === 'rotate' ) {
+
+			this._offset.copy( this.pointEnd ).sub( this.pointStart );
+
+			const ROTATION_SPEED = 20 / this.worldPosition.distanceTo( _tempVector.setFromMatrixPosition( this.camera.matrixWorld ) );
+
+			let _inPlaneRotation = false;
+
+			if ( axis === 'XYZE' ) {
+
+				this.rotationAxis.copy( this._offset ).cross( this.eye ).normalize();
+				this.rotationAngle = this._offset.dot( _tempVector.copy( this.rotationAxis ).cross( this.eye ) ) * ROTATION_SPEED;
+
+			} else if ( axis === 'X' || axis === 'Y' || axis === 'Z' ) {
+
+				this.rotationAxis.copy( _unit[ axis ] );
+
+				_tempVector.copy( _unit[ axis ] );
+
+				if ( space === 'local' ) {
+
+					_tempVector.applyQuaternion( this.worldQuaternion );
+
+				}
+
+				_tempVector.cross( this.eye );
+
+				// When _tempVector is 0 after cross with this.eye the vectors are parallel and should use in-plane rotation logic.
+				if ( _tempVector.length() === 0 ) {
+
+					_inPlaneRotation = true;
+
+				} else {
+
+					this.rotationAngle = this._offset.dot( _tempVector.normalize() ) * ROTATION_SPEED;
+
+				}
+
+
+			}
+
+			if ( axis === 'E' || _inPlaneRotation ) {
+
+				this.rotationAxis.copy( this.eye );
+				this.rotationAngle = this.pointEnd.angleTo( this.pointStart );
+
+				this._startNorm.copy( this.pointStart ).normalize();
+				this._endNorm.copy( this.pointEnd ).normalize();
+
+				this.rotationAngle *= ( this._endNorm.cross( this._startNorm ).dot( this.eye ) < 0 ? 1 : - 1 );
+
+			}
+
+			// Apply rotation snap
+
+			if ( this.rotationSnap ) this.rotationAngle = Math.round( this.rotationAngle / this.rotationSnap ) * this.rotationSnap;
+
+			// Apply rotate
+			if ( space === 'local' && axis !== 'E' && axis !== 'XYZE' ) {
+
+				object.quaternion.copy( this._quaternionStart );
+				object.quaternion.multiply( _tempQuaternion.setFromAxisAngle( this.rotationAxis, this.rotationAngle ) ).normalize();
+
+			} else {
+
+				this.rotationAxis.applyQuaternion( this._parentQuaternionInv );
+				object.quaternion.copy( _tempQuaternion.setFromAxisAngle( this.rotationAxis, this.rotationAngle ) );
+				object.quaternion.multiply( this._quaternionStart ).normalize();
+
+			}
+
+		}
+
+		this.dispatchEvent( _changeEvent );
+		this.dispatchEvent( _objectChangeEvent );
+
+	}
+
+	pointerUp( pointer ) {
+
+		if ( pointer !== null && pointer.button !== 0 ) return;
+
+		if ( this.dragging && ( this.axis !== null ) ) {
+
+			_mouseUpEvent.mode = this.mode;
+			this.dispatchEvent( _mouseUpEvent );
+
+		}
+
+		this.dragging = false;
+		this.axis = null;
+
+	}
+
+	dispose() {
+
+		this.disconnect();
+
+		this.traverse( function ( child ) {
+
+			if ( child.geometry ) child.geometry.dispose();
+			if ( child.material ) child.material.dispose();
+
+		} );
+
+	}
+
+	// Set current object
+	attach( object ) {
+
+		this.object = object;
+		this._root.visible = true;
+
+		return this;
+
+	}
+
+	// Detach from object
+	detach() {
+
+		this.object = undefined;
+		this.axis = null;
+
+		this._root.visible = false;
+
+		return this;
+
+	}
+
+	reset() {
+
+		if ( ! this.enabled ) return;
+
+		if ( this.dragging ) {
+
+			this.object.position.copy( this._positionStart );
+			this.object.quaternion.copy( this._quaternionStart );
+			this.object.scale.copy( this._scaleStart );
+
+			this.dispatchEvent( _changeEvent );
+			this.dispatchEvent( _objectChangeEvent );
+
+			this.pointStart.copy( this.pointEnd );
+
+		}
+
+	}
+
+	getRaycaster() {
+
+		return _raycaster;
+
+	}
+
+	// TODO: deprecate
+
+	getMode() {
+
+		return this.mode;
+
+	}
+
+	setMode( mode ) {
+
+		this.mode = mode;
+
+	}
+
+	setTranslationSnap( translationSnap ) {
+
+		this.translationSnap = translationSnap;
+
+	}
+
+	setRotationSnap( rotationSnap ) {
+
+		this.rotationSnap = rotationSnap;
+
+	}
+
+	setScaleSnap( scaleSnap ) {
+
+		this.scaleSnap = scaleSnap;
+
+	}
+
+	setSize( size ) {
+
+		this.size = size;
+
+	}
+
+	setSpace( space ) {
+
+		this.space = space;
+
+	}
+
+}
+
+// mouse / touch event handlers
+
+function getPointer( event ) {
+
+	if ( this.domElement.ownerDocument.pointerLockElement ) {
+
+		return {
+			x: 0,
+			y: 0,
+			button: event.button
+		};
+
+	} else {
+
+		const rect = this.domElement.getBoundingClientRect();
+
+		return {
+			x: ( event.clientX - rect.left ) / rect.width * 2 - 1,
+			y: - ( event.clientY - rect.top ) / rect.height * 2 + 1,
+			button: event.button
+		};
+
+	}
+
+}
+
+function onPointerHover( event ) {
+
+	if ( ! this.enabled ) return;
+
+	switch ( event.pointerType ) {
+
+		case 'mouse':
+		case 'pen':
+			this.pointerHover( this._getPointer( event ) );
+			break;
+
+	}
+
+}
+
+function onPointerDown( event ) {
+
+	if ( ! this.enabled ) return;
+
+	if ( ! document.pointerLockElement ) {
+
+		this.domElement.setPointerCapture( event.pointerId );
+
+	}
+
+	this.domElement.addEventListener( 'pointermove', this._onPointerMove );
+
+	this.pointerHover( this._getPointer( event ) );
+	this.pointerDown( this._getPointer( event ) );
+
+}
+
+function onPointerMove( event ) {
+
+	if ( ! this.enabled ) return;
+
+	this.pointerMove( this._getPointer( event ) );
+
+}
+
+function onPointerUp( event ) {
+
+	if ( ! this.enabled ) return;
+
+	this.domElement.releasePointerCapture( event.pointerId );
+
+	this.domElement.removeEventListener( 'pointermove', this._onPointerMove );
+
+	this.pointerUp( this._getPointer( event ) );
+
+}
+
+function intersectObjectWithRay( object, raycaster, includeInvisible ) {
+
+	const allIntersections = raycaster.intersectObject( object, true );
+
+	for ( let i = 0; i < allIntersections.length; i ++ ) {
+
+		if ( allIntersections[ i ].object.visible || includeInvisible ) {
+
+			return allIntersections[ i ];
+
+		}
+
+	}
+
+	return false;
+
+}
+
+//
+
+// Reusable utility variables
+
+const _tempEuler = new Euler();
+const _alignVector = new Vector3( 0, 1, 0 );
+const _zeroVector = new Vector3( 0, 0, 0 );
+const _lookAtMatrix = new Matrix4();
+const _tempQuaternion2 = new Quaternion();
+const _identityQuaternion = new Quaternion();
+const _dirVector = new Vector3();
+const _tempMatrix = new Matrix4();
+
+const _unitX = new Vector3( 1, 0, 0 );
+const _unitY = new Vector3( 0, 1, 0 );
+const _unitZ = new Vector3( 0, 0, 1 );
+
+const _v1 = new Vector3();
+const _v2 = new Vector3();
+const _v3 = new Vector3();
+
+class TransformControlsRoot extends Object3D {
+
+	constructor( controls ) {
+
+		super();
+
+		this.isTransformControlsRoot = true;
+
+		this.controls = controls;
+		this.visible = false;
+
+	}
+
+	// updateMatrixWorld updates key transformation variables
+	updateMatrixWorld( force ) {
+
+		const controls = this.controls;
+
+		if ( controls.object !== undefined ) {
+
+			controls.object.updateMatrixWorld();
+
+			if ( controls.object.parent === null ) {
+
+				console.error( 'TransformControls: The attached 3D object must be a part of the scene graph.' );
+
+			} else {
+
+				controls.object.parent.matrixWorld.decompose( controls._parentPosition, controls._parentQuaternion, controls._parentScale );
+
+			}
+
+			controls.object.matrixWorld.decompose( controls.worldPosition, controls.worldQuaternion, controls._worldScale );
+
+			controls._parentQuaternionInv.copy( controls._parentQuaternion ).invert();
+			controls._worldQuaternionInv.copy( controls.worldQuaternion ).invert();
+
+		}
+
+		controls.camera.updateMatrixWorld();
+		controls.camera.matrixWorld.decompose( controls.cameraPosition, controls.cameraQuaternion, controls._cameraScale );
+
+		if ( controls.camera.isOrthographicCamera ) {
+
+			controls.camera.getWorldDirection( controls.eye ).negate();
+
+		} else {
+
+			controls.eye.copy( controls.cameraPosition ).sub( controls.worldPosition ).normalize();
+
+		}
+
+		super.updateMatrixWorld( force );
+
+	}
+
+}
+
+class TransformControlsGizmo extends Object3D {
+
+	constructor() {
+
+		super();
+
+		this.isTransformControlsGizmo = true;
+
+		this.type = 'TransformControlsGizmo';
+
+		// shared materials
+
+		const gizmoMaterial = new MeshBasicMaterial( {
+			depthTest: false,
+			depthWrite: false,
+			fog: false,
+			toneMapped: false,
+			transparent: true
+		} );
+
+		const gizmoLineMaterial = new LineBasicMaterial( {
+			depthTest: false,
+			depthWrite: false,
+			fog: false,
+			toneMapped: false,
+			transparent: true
+		} );
+
+		// Make unique material for each axis/color
+
+		const matInvisible = gizmoMaterial.clone();
+		matInvisible.opacity = 0.15;
+
+		const matHelper = gizmoLineMaterial.clone();
+		matHelper.opacity = 0.5;
+
+		const matRed = gizmoMaterial.clone();
+		matRed.color.setHex( 0xff0000 );
+
+		const matGreen = gizmoMaterial.clone();
+		matGreen.color.setHex( 0x00ff00 );
+
+		const matBlue = gizmoMaterial.clone();
+		matBlue.color.setHex( 0x0000ff );
+
+		const matRedTransparent = gizmoMaterial.clone();
+		matRedTransparent.color.setHex( 0xff0000 );
+		matRedTransparent.opacity = 0.5;
+
+		const matGreenTransparent = gizmoMaterial.clone();
+		matGreenTransparent.color.setHex( 0x00ff00 );
+		matGreenTransparent.opacity = 0.5;
+
+		const matBlueTransparent = gizmoMaterial.clone();
+		matBlueTransparent.color.setHex( 0x0000ff );
+		matBlueTransparent.opacity = 0.5;
+
+		const matWhiteTransparent = gizmoMaterial.clone();
+		matWhiteTransparent.opacity = 0.25;
+
+		const matYellowTransparent = gizmoMaterial.clone();
+		matYellowTransparent.color.setHex( 0xffff00 );
+		matYellowTransparent.opacity = 0.25;
+
+		const matYellow = gizmoMaterial.clone();
+		matYellow.color.setHex( 0xffff00 );
+
+		const matGray = gizmoMaterial.clone();
+		matGray.color.setHex( 0x787878 );
+
+		// reusable geometry
+
+		const arrowGeometry = new CylinderGeometry( 0, 0.04, 0.1, 12 );
+		arrowGeometry.translate( 0, 0.05, 0 );
+
+		const scaleHandleGeometry = new BoxGeometry( 0.08, 0.08, 0.08 );
+		scaleHandleGeometry.translate( 0, 0.04, 0 );
+
+		const lineGeometry = new BufferGeometry();
+		lineGeometry.setAttribute( 'position', new Float32BufferAttribute( [ 0, 0, 0,	1, 0, 0 ], 3 ) );
+
+		const lineGeometry2 = new CylinderGeometry( 0.0075, 0.0075, 0.5, 3 );
+		lineGeometry2.translate( 0, 0.25, 0 );
+
+		function CircleGeometry( radius, arc ) {
+
+			const geometry = new TorusGeometry( radius, 0.0075, 3, 64, arc * Math.PI * 2 );
+			geometry.rotateY( Math.PI / 2 );
+			geometry.rotateX( Math.PI / 2 );
+			return geometry;
+
+		}
+
+		// Special geometry for transform helper. If scaled with position vector it spans from [0,0,0] to position
+
+		function TranslateHelperGeometry() {
+
+			const geometry = new BufferGeometry();
+
+			geometry.setAttribute( 'position', new Float32BufferAttribute( [ 0, 0, 0, 1, 1, 1 ], 3 ) );
+
+			return geometry;
+
+		}
+
+		// Gizmo definitions - custom hierarchy definitions for setupGizmo() function
+
+		const gizmoTranslate = {
+			X: [
+				[ new Mesh( arrowGeometry, matRed ), [ 0.5, 0, 0 ], [ 0, 0, - Math.PI / 2 ]],
+				[ new Mesh( arrowGeometry, matRed ), [ - 0.5, 0, 0 ], [ 0, 0, Math.PI / 2 ]],
+				[ new Mesh( lineGeometry2, matRed ), [ 0, 0, 0 ], [ 0, 0, - Math.PI / 2 ]]
+			],
+			Y: [
+				[ new Mesh( arrowGeometry, matGreen ), [ 0, 0.5, 0 ]],
+				[ new Mesh( arrowGeometry, matGreen ), [ 0, - 0.5, 0 ], [ Math.PI, 0, 0 ]],
+				[ new Mesh( lineGeometry2, matGreen ) ]
+			],
+			Z: [
+				[ new Mesh( arrowGeometry, matBlue ), [ 0, 0, 0.5 ], [ Math.PI / 2, 0, 0 ]],
+				[ new Mesh( arrowGeometry, matBlue ), [ 0, 0, - 0.5 ], [ - Math.PI / 2, 0, 0 ]],
+				[ new Mesh( lineGeometry2, matBlue ), null, [ Math.PI / 2, 0, 0 ]]
+			],
+			XYZ: [
+				[ new Mesh( new OctahedronGeometry( 0.1, 0 ), matWhiteTransparent.clone() ), [ 0, 0, 0 ]]
+			],
+			XY: [
+				[ new Mesh( new BoxGeometry( 0.15, 0.15, 0.01 ), matBlueTransparent.clone() ), [ 0.15, 0.15, 0 ]]
+			],
+			YZ: [
+				[ new Mesh( new BoxGeometry( 0.15, 0.15, 0.01 ), matRedTransparent.clone() ), [ 0, 0.15, 0.15 ], [ 0, Math.PI / 2, 0 ]]
+			],
+			XZ: [
+				[ new Mesh( new BoxGeometry( 0.15, 0.15, 0.01 ), matGreenTransparent.clone() ), [ 0.15, 0, 0.15 ], [ - Math.PI / 2, 0, 0 ]]
+			]
+		};
+
+		const pickerTranslate = {
+			X: [
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ 0.3, 0, 0 ], [ 0, 0, - Math.PI / 2 ]],
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ - 0.3, 0, 0 ], [ 0, 0, Math.PI / 2 ]]
+			],
+			Y: [
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ 0, 0.3, 0 ]],
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ 0, - 0.3, 0 ], [ 0, 0, Math.PI ]]
+			],
+			Z: [
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ 0, 0, 0.3 ], [ Math.PI / 2, 0, 0 ]],
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ 0, 0, - 0.3 ], [ - Math.PI / 2, 0, 0 ]]
+			],
+			XYZ: [
+				[ new Mesh( new OctahedronGeometry( 0.2, 0 ), matInvisible ) ]
+			],
+			XY: [
+				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0.15, 0.15, 0 ]]
+			],
+			YZ: [
+				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0, 0.15, 0.15 ], [ 0, Math.PI / 2, 0 ]]
+			],
+			XZ: [
+				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0.15, 0, 0.15 ], [ - Math.PI / 2, 0, 0 ]]
+			]
+		};
+
+		const helperTranslate = {
+			START: [
+				[ new Mesh( new OctahedronGeometry( 0.01, 2 ), matHelper ), null, null, null, 'helper' ]
+			],
+			END: [
+				[ new Mesh( new OctahedronGeometry( 0.01, 2 ), matHelper ), null, null, null, 'helper' ]
+			],
+			DELTA: [
+				[ new Line( TranslateHelperGeometry(), matHelper ), null, null, null, 'helper' ]
+			],
+			X: [
+				[ new Line( lineGeometry, matHelper.clone() ), [ - 1e3, 0, 0 ], null, [ 1e6, 1, 1 ], 'helper' ]
+			],
+			Y: [
+				[ new Line( lineGeometry, matHelper.clone() ), [ 0, - 1e3, 0 ], [ 0, 0, Math.PI / 2 ], [ 1e6, 1, 1 ], 'helper' ]
+			],
+			Z: [
+				[ new Line( lineGeometry, matHelper.clone() ), [ 0, 0, - 1e3 ], [ 0, - Math.PI / 2, 0 ], [ 1e6, 1, 1 ], 'helper' ]
+			]
+		};
+
+		const gizmoRotate = {
+			XYZE: [
+				[ new Mesh( CircleGeometry( 0.5, 1 ), matGray ), null, [ 0, Math.PI / 2, 0 ]]
+			],
+			X: [
+				[ new Mesh( CircleGeometry( 0.5, 0.5 ), matRed ) ]
+			],
+			Y: [
+				[ new Mesh( CircleGeometry( 0.5, 0.5 ), matGreen ), null, [ 0, 0, - Math.PI / 2 ]]
+			],
+			Z: [
+				[ new Mesh( CircleGeometry( 0.5, 0.5 ), matBlue ), null, [ 0, Math.PI / 2, 0 ]]
+			],
+			E: [
+				[ new Mesh( CircleGeometry( 0.75, 1 ), matYellowTransparent ), null, [ 0, Math.PI / 2, 0 ]]
+			]
+		};
+
+		const helperRotate = {
+			AXIS: [
+				[ new Line( lineGeometry, matHelper.clone() ), [ - 1e3, 0, 0 ], null, [ 1e6, 1, 1 ], 'helper' ]
+			]
+		};
+
+		const pickerRotate = {
+			XYZE: [
+				[ new Mesh( new SphereGeometry( 0.25, 10, 8 ), matInvisible ) ]
+			],
+			X: [
+				[ new Mesh( new TorusGeometry( 0.5, 0.1, 4, 24 ), matInvisible ), [ 0, 0, 0 ], [ 0, - Math.PI / 2, - Math.PI / 2 ]],
+			],
+			Y: [
+				[ new Mesh( new TorusGeometry( 0.5, 0.1, 4, 24 ), matInvisible ), [ 0, 0, 0 ], [ Math.PI / 2, 0, 0 ]],
+			],
+			Z: [
+				[ new Mesh( new TorusGeometry( 0.5, 0.1, 4, 24 ), matInvisible ), [ 0, 0, 0 ], [ 0, 0, - Math.PI / 2 ]],
+			],
+			E: [
+				[ new Mesh( new TorusGeometry( 0.75, 0.1, 2, 24 ), matInvisible ) ]
+			]
+		};
+
+		const gizmoScale = {
+			X: [
+				[ new Mesh( scaleHandleGeometry, matRed ), [ 0.5, 0, 0 ], [ 0, 0, - Math.PI / 2 ]],
+				[ new Mesh( lineGeometry2, matRed ), [ 0, 0, 0 ], [ 0, 0, - Math.PI / 2 ]],
+				[ new Mesh( scaleHandleGeometry, matRed ), [ - 0.5, 0, 0 ], [ 0, 0, Math.PI / 2 ]],
+			],
+			Y: [
+				[ new Mesh( scaleHandleGeometry, matGreen ), [ 0, 0.5, 0 ]],
+				[ new Mesh( lineGeometry2, matGreen ) ],
+				[ new Mesh( scaleHandleGeometry, matGreen ), [ 0, - 0.5, 0 ], [ 0, 0, Math.PI ]],
+			],
+			Z: [
+				[ new Mesh( scaleHandleGeometry, matBlue ), [ 0, 0, 0.5 ], [ Math.PI / 2, 0, 0 ]],
+				[ new Mesh( lineGeometry2, matBlue ), [ 0, 0, 0 ], [ Math.PI / 2, 0, 0 ]],
+				[ new Mesh( scaleHandleGeometry, matBlue ), [ 0, 0, - 0.5 ], [ - Math.PI / 2, 0, 0 ]]
+			],
+			XY: [
+				[ new Mesh( new BoxGeometry( 0.15, 0.15, 0.01 ), matBlueTransparent ), [ 0.15, 0.15, 0 ]]
+			],
+			YZ: [
+				[ new Mesh( new BoxGeometry( 0.15, 0.15, 0.01 ), matRedTransparent ), [ 0, 0.15, 0.15 ], [ 0, Math.PI / 2, 0 ]]
+			],
+			XZ: [
+				[ new Mesh( new BoxGeometry( 0.15, 0.15, 0.01 ), matGreenTransparent ), [ 0.15, 0, 0.15 ], [ - Math.PI / 2, 0, 0 ]]
+			],
+			XYZ: [
+				[ new Mesh( new BoxGeometry( 0.1, 0.1, 0.1 ), matWhiteTransparent.clone() ) ],
+			]
+		};
+
+		const pickerScale = {
+			X: [
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ 0.3, 0, 0 ], [ 0, 0, - Math.PI / 2 ]],
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ - 0.3, 0, 0 ], [ 0, 0, Math.PI / 2 ]]
+			],
+			Y: [
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ 0, 0.3, 0 ]],
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ 0, - 0.3, 0 ], [ 0, 0, Math.PI ]]
+			],
+			Z: [
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ 0, 0, 0.3 ], [ Math.PI / 2, 0, 0 ]],
+				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ 0, 0, - 0.3 ], [ - Math.PI / 2, 0, 0 ]]
+			],
+			XY: [
+				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0.15, 0.15, 0 ]],
+			],
+			YZ: [
+				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0, 0.15, 0.15 ], [ 0, Math.PI / 2, 0 ]],
+			],
+			XZ: [
+				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0.15, 0, 0.15 ], [ - Math.PI / 2, 0, 0 ]],
+			],
+			XYZ: [
+				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.2 ), matInvisible ), [ 0, 0, 0 ]],
+			]
+		};
+
+		const helperScale = {
+			X: [
+				[ new Line( lineGeometry, matHelper.clone() ), [ - 1e3, 0, 0 ], null, [ 1e6, 1, 1 ], 'helper' ]
+			],
+			Y: [
+				[ new Line( lineGeometry, matHelper.clone() ), [ 0, - 1e3, 0 ], [ 0, 0, Math.PI / 2 ], [ 1e6, 1, 1 ], 'helper' ]
+			],
+			Z: [
+				[ new Line( lineGeometry, matHelper.clone() ), [ 0, 0, - 1e3 ], [ 0, - Math.PI / 2, 0 ], [ 1e6, 1, 1 ], 'helper' ]
+			]
+		};
+
+		// Creates an Object3D with gizmos described in custom hierarchy definition.
+
+		function setupGizmo( gizmoMap ) {
+
+			const gizmo = new Object3D();
+
+			for ( const name in gizmoMap ) {
+
+				for ( let i = gizmoMap[ name ].length; i --; ) {
+
+					const object = gizmoMap[ name ][ i ][ 0 ].clone();
+					const position = gizmoMap[ name ][ i ][ 1 ];
+					const rotation = gizmoMap[ name ][ i ][ 2 ];
+					const scale = gizmoMap[ name ][ i ][ 3 ];
+					const tag = gizmoMap[ name ][ i ][ 4 ];
+
+					// name and tag properties are essential for picking and updating logic.
+					object.name = name;
+					object.tag = tag;
+
+					if ( position ) {
+
+						object.position.set( position[ 0 ], position[ 1 ], position[ 2 ] );
+
+					}
+
+					if ( rotation ) {
+
+						object.rotation.set( rotation[ 0 ], rotation[ 1 ], rotation[ 2 ] );
+
+					}
+
+					if ( scale ) {
+
+						object.scale.set( scale[ 0 ], scale[ 1 ], scale[ 2 ] );
+
+					}
+
+					object.updateMatrix();
+
+					const tempGeometry = object.geometry.clone();
+					tempGeometry.applyMatrix4( object.matrix );
+					object.geometry = tempGeometry;
+					object.renderOrder = Infinity;
+
+					object.position.set( 0, 0, 0 );
+					object.rotation.set( 0, 0, 0 );
+					object.scale.set( 1, 1, 1 );
+
+					gizmo.add( object );
+
+				}
+
+			}
+
+			return gizmo;
+
+		}
+
+		// Gizmo creation
+
+		this.gizmo = {};
+		this.picker = {};
+		this.helper = {};
+
+		this.add( this.gizmo[ 'translate' ] = setupGizmo( gizmoTranslate ) );
+		this.add( this.gizmo[ 'rotate' ] = setupGizmo( gizmoRotate ) );
+		this.add( this.gizmo[ 'scale' ] = setupGizmo( gizmoScale ) );
+		this.add( this.picker[ 'translate' ] = setupGizmo( pickerTranslate ) );
+		this.add( this.picker[ 'rotate' ] = setupGizmo( pickerRotate ) );
+		this.add( this.picker[ 'scale' ] = setupGizmo( pickerScale ) );
+		this.add( this.helper[ 'translate' ] = setupGizmo( helperTranslate ) );
+		this.add( this.helper[ 'rotate' ] = setupGizmo( helperRotate ) );
+		this.add( this.helper[ 'scale' ] = setupGizmo( helperScale ) );
+
+		// Pickers should be hidden always
+
+		this.picker[ 'translate' ].visible = false;
+		this.picker[ 'rotate' ].visible = false;
+		this.picker[ 'scale' ].visible = false;
+
+	}
+
+	// updateMatrixWorld will update transformations and appearance of individual handles
+
+	updateMatrixWorld( force ) {
+
+		const space = ( this.mode === 'scale' ) ? 'local' : this.space; // scale always oriented to local rotation
+
+		const quaternion = ( space === 'local' ) ? this.worldQuaternion : _identityQuaternion;
+
+		// Show only gizmos for current transform mode
+
+		this.gizmo[ 'translate' ].visible = this.mode === 'translate';
+		this.gizmo[ 'rotate' ].visible = this.mode === 'rotate';
+		this.gizmo[ 'scale' ].visible = this.mode === 'scale';
+
+		this.helper[ 'translate' ].visible = this.mode === 'translate';
+		this.helper[ 'rotate' ].visible = this.mode === 'rotate';
+		this.helper[ 'scale' ].visible = this.mode === 'scale';
+
+
+		let handles = [];
+		handles = handles.concat( this.picker[ this.mode ].children );
+		handles = handles.concat( this.gizmo[ this.mode ].children );
+		handles = handles.concat( this.helper[ this.mode ].children );
+
+		for ( let i = 0; i < handles.length; i ++ ) {
+
+			const handle = handles[ i ];
+
+			// hide aligned to camera
+
+			handle.visible = true;
+			handle.rotation.set( 0, 0, 0 );
+			handle.position.copy( this.worldPosition );
+
+			let factor;
+
+			if ( this.camera.isOrthographicCamera ) {
+
+				factor = ( this.camera.top - this.camera.bottom ) / this.camera.zoom;
+
+			} else {
+
+				factor = this.worldPosition.distanceTo( this.cameraPosition ) * Math.min( 1.9 * Math.tan( Math.PI * this.camera.fov / 360 ) / this.camera.zoom, 7 );
+
+			}
+
+			handle.scale.set( 1, 1, 1 ).multiplyScalar( factor * this.size / 4 );
+
+			// TODO: simplify helpers and consider decoupling from gizmo
+
+			if ( handle.tag === 'helper' ) {
+
+				handle.visible = false;
+
+				if ( handle.name === 'AXIS' ) {
+
+					handle.visible = !! this.axis;
+
+					if ( this.axis === 'X' ) {
+
+						_tempQuaternion.setFromEuler( _tempEuler.set( 0, 0, 0 ) );
+						handle.quaternion.copy( quaternion ).multiply( _tempQuaternion );
+
+						if ( Math.abs( _alignVector.copy( _unitX ).applyQuaternion( quaternion ).dot( this.eye ) ) > 0.9 ) {
+
+							handle.visible = false;
+
+						}
+
+					}
+
+					if ( this.axis === 'Y' ) {
+
+						_tempQuaternion.setFromEuler( _tempEuler.set( 0, 0, Math.PI / 2 ) );
+						handle.quaternion.copy( quaternion ).multiply( _tempQuaternion );
+
+						if ( Math.abs( _alignVector.copy( _unitY ).applyQuaternion( quaternion ).dot( this.eye ) ) > 0.9 ) {
+
+							handle.visible = false;
+
+						}
+
+					}
+
+					if ( this.axis === 'Z' ) {
+
+						_tempQuaternion.setFromEuler( _tempEuler.set( 0, Math.PI / 2, 0 ) );
+						handle.quaternion.copy( quaternion ).multiply( _tempQuaternion );
+
+						if ( Math.abs( _alignVector.copy( _unitZ ).applyQuaternion( quaternion ).dot( this.eye ) ) > 0.9 ) {
+
+							handle.visible = false;
+
+						}
+
+					}
+
+					if ( this.axis === 'XYZE' ) {
+
+						_tempQuaternion.setFromEuler( _tempEuler.set( 0, Math.PI / 2, 0 ) );
+						_alignVector.copy( this.rotationAxis );
+						handle.quaternion.setFromRotationMatrix( _lookAtMatrix.lookAt( _zeroVector, _alignVector, _unitY ) );
+						handle.quaternion.multiply( _tempQuaternion );
+						handle.visible = this.dragging;
+
+					}
+
+					if ( this.axis === 'E' ) {
+
+						handle.visible = false;
+
+					}
+
+
+				} else if ( handle.name === 'START' ) {
+
+					handle.position.copy( this.worldPositionStart );
+					handle.visible = this.dragging;
+
+				} else if ( handle.name === 'END' ) {
+
+					handle.position.copy( this.worldPosition );
+					handle.visible = this.dragging;
+
+				} else if ( handle.name === 'DELTA' ) {
+
+					handle.position.copy( this.worldPositionStart );
+					handle.quaternion.copy( this.worldQuaternionStart );
+					_tempVector.set( 1e-10, 1e-10, 1e-10 ).add( this.worldPositionStart ).sub( this.worldPosition ).multiplyScalar( - 1 );
+					_tempVector.applyQuaternion( this.worldQuaternionStart.clone().invert() );
+					handle.scale.copy( _tempVector );
+					handle.visible = this.dragging;
+
+				} else {
+
+					handle.quaternion.copy( quaternion );
+
+					if ( this.dragging ) {
+
+						handle.position.copy( this.worldPositionStart );
+
+					} else {
+
+						handle.position.copy( this.worldPosition );
+
+					}
+
+					if ( this.axis ) {
+
+						handle.visible = this.axis.search( handle.name ) !== - 1;
+
+					}
+
+				}
+
+				// If updating helper, skip rest of the loop
+				continue;
+
+			}
+
+			// Align handles to current local or world rotation
+
+			handle.quaternion.copy( quaternion );
+
+			if ( this.mode === 'translate' || this.mode === 'scale' ) {
+
+				// Hide translate and scale axis facing the camera
+
+				const AXIS_HIDE_THRESHOLD = 0.99;
+				const PLANE_HIDE_THRESHOLD = 0.2;
+
+				if ( handle.name === 'X' ) {
+
+					if ( Math.abs( _alignVector.copy( _unitX ).applyQuaternion( quaternion ).dot( this.eye ) ) > AXIS_HIDE_THRESHOLD ) {
+
+						handle.scale.set( 1e-10, 1e-10, 1e-10 );
+						handle.visible = false;
+
+					}
+
+				}
+
+				if ( handle.name === 'Y' ) {
+
+					if ( Math.abs( _alignVector.copy( _unitY ).applyQuaternion( quaternion ).dot( this.eye ) ) > AXIS_HIDE_THRESHOLD ) {
+
+						handle.scale.set( 1e-10, 1e-10, 1e-10 );
+						handle.visible = false;
+
+					}
+
+				}
+
+				if ( handle.name === 'Z' ) {
+
+					if ( Math.abs( _alignVector.copy( _unitZ ).applyQuaternion( quaternion ).dot( this.eye ) ) > AXIS_HIDE_THRESHOLD ) {
+
+						handle.scale.set( 1e-10, 1e-10, 1e-10 );
+						handle.visible = false;
+
+					}
+
+				}
+
+				if ( handle.name === 'XY' ) {
+
+					if ( Math.abs( _alignVector.copy( _unitZ ).applyQuaternion( quaternion ).dot( this.eye ) ) < PLANE_HIDE_THRESHOLD ) {
+
+						handle.scale.set( 1e-10, 1e-10, 1e-10 );
+						handle.visible = false;
+
+					}
+
+				}
+
+				if ( handle.name === 'YZ' ) {
+
+					if ( Math.abs( _alignVector.copy( _unitX ).applyQuaternion( quaternion ).dot( this.eye ) ) < PLANE_HIDE_THRESHOLD ) {
+
+						handle.scale.set( 1e-10, 1e-10, 1e-10 );
+						handle.visible = false;
+
+					}
+
+				}
+
+				if ( handle.name === 'XZ' ) {
+
+					if ( Math.abs( _alignVector.copy( _unitY ).applyQuaternion( quaternion ).dot( this.eye ) ) < PLANE_HIDE_THRESHOLD ) {
+
+						handle.scale.set( 1e-10, 1e-10, 1e-10 );
+						handle.visible = false;
+
+					}
+
+				}
+
+			} else if ( this.mode === 'rotate' ) {
+
+				// Align handles to current local or world rotation
+
+				_tempQuaternion2.copy( quaternion );
+				_alignVector.copy( this.eye ).applyQuaternion( _tempQuaternion.copy( quaternion ).invert() );
+
+				if ( handle.name.search( 'E' ) !== - 1 ) {
+
+					handle.quaternion.setFromRotationMatrix( _lookAtMatrix.lookAt( this.eye, _zeroVector, _unitY ) );
+
+				}
+
+				if ( handle.name === 'X' ) {
+
+					_tempQuaternion.setFromAxisAngle( _unitX, Math.atan2( - _alignVector.y, _alignVector.z ) );
+					_tempQuaternion.multiplyQuaternions( _tempQuaternion2, _tempQuaternion );
+					handle.quaternion.copy( _tempQuaternion );
+
+				}
+
+				if ( handle.name === 'Y' ) {
+
+					_tempQuaternion.setFromAxisAngle( _unitY, Math.atan2( _alignVector.x, _alignVector.z ) );
+					_tempQuaternion.multiplyQuaternions( _tempQuaternion2, _tempQuaternion );
+					handle.quaternion.copy( _tempQuaternion );
+
+				}
+
+				if ( handle.name === 'Z' ) {
+
+					_tempQuaternion.setFromAxisAngle( _unitZ, Math.atan2( _alignVector.y, _alignVector.x ) );
+					_tempQuaternion.multiplyQuaternions( _tempQuaternion2, _tempQuaternion );
+					handle.quaternion.copy( _tempQuaternion );
+
+				}
+
+			}
+
+			// Hide disabled axes
+			handle.visible = handle.visible && ( handle.name.indexOf( 'X' ) === - 1 || this.showX );
+			handle.visible = handle.visible && ( handle.name.indexOf( 'Y' ) === - 1 || this.showY );
+			handle.visible = handle.visible && ( handle.name.indexOf( 'Z' ) === - 1 || this.showZ );
+			handle.visible = handle.visible && ( handle.name.indexOf( 'E' ) === - 1 || ( this.showX && this.showY && this.showZ ) );
+
+			// highlight selected axis
+
+			handle.material._color = handle.material._color || handle.material.color.clone();
+			handle.material._opacity = handle.material._opacity || handle.material.opacity;
+
+			handle.material.color.copy( handle.material._color );
+			handle.material.opacity = handle.material._opacity;
+
+			if ( this.enabled && this.axis ) {
+
+				if ( handle.name === this.axis ) {
+
+					handle.material.color.setHex( 0xffff00 );
+					handle.material.opacity = 1.0;
+
+				} else if ( this.axis.split( '' ).some( function ( a ) {
+
+					return handle.name === a;
+
+				} ) ) {
+
+					handle.material.color.setHex( 0xffff00 );
+					handle.material.opacity = 1.0;
+
+				}
+
+			}
+
+		}
+
+		super.updateMatrixWorld( force );
+
+	}
+
+}
+
+//
+
+class TransformControlsPlane extends Mesh {
+
+	constructor() {
+
+		super(
+			new PlaneGeometry( 100000, 100000, 2, 2 ),
+			new MeshBasicMaterial( { visible: false, wireframe: true, side: DoubleSide, transparent: true, opacity: 0.1, toneMapped: false } )
+		);
+
+		this.isTransformControlsPlane = true;
+
+		this.type = 'TransformControlsPlane';
+
+	}
+
+	updateMatrixWorld( force ) {
+
+		let space = this.space;
+
+		this.position.copy( this.worldPosition );
+
+		if ( this.mode === 'scale' ) space = 'local'; // scale always oriented to local rotation
+
+		_v1.copy( _unitX ).applyQuaternion( space === 'local' ? this.worldQuaternion : _identityQuaternion );
+		_v2.copy( _unitY ).applyQuaternion( space === 'local' ? this.worldQuaternion : _identityQuaternion );
+		_v3.copy( _unitZ ).applyQuaternion( space === 'local' ? this.worldQuaternion : _identityQuaternion );
+
+		// Align the plane for current transform mode, axis and space.
+
+		_alignVector.copy( _v2 );
+
+		switch ( this.mode ) {
+
+			case 'translate':
+			case 'scale':
+				switch ( this.axis ) {
+
+					case 'X':
+						_alignVector.copy( this.eye ).cross( _v1 );
+						_dirVector.copy( _v1 ).cross( _alignVector );
+						break;
+					case 'Y':
+						_alignVector.copy( this.eye ).cross( _v2 );
+						_dirVector.copy( _v2 ).cross( _alignVector );
+						break;
+					case 'Z':
+						_alignVector.copy( this.eye ).cross( _v3 );
+						_dirVector.copy( _v3 ).cross( _alignVector );
+						break;
+					case 'XY':
+						_dirVector.copy( _v3 );
+						break;
+					case 'YZ':
+						_dirVector.copy( _v1 );
+						break;
+					case 'XZ':
+						_alignVector.copy( _v3 );
+						_dirVector.copy( _v2 );
+						break;
+					case 'XYZ':
+					case 'E':
+						_dirVector.set( 0, 0, 0 );
+						break;
+
+				}
+
+				break;
+			case 'rotate':
+			default:
+				// special case for rotate
+				_dirVector.set( 0, 0, 0 );
+
+		}
+
+		if ( _dirVector.length() === 0 ) {
+
+			// If in rotate mode, make the plane parallel to camera
+			this.quaternion.copy( this.cameraQuaternion );
+
+		} else {
+
+			_tempMatrix.lookAt( _tempVector.set( 0, 0, 0 ), _dirVector, _alignVector );
+
+			this.quaternion.setFromRotationMatrix( _tempMatrix );
+
+		}
+
+		super.updateMatrixWorld( force );
+
+	}
+
+}
+
+return {TransformControls};
+})();
 const GAME_HTML='<!doctype html>\n'+document.documentElement.outerHTML;
 const {CanvasTexture,MeshBasicMaterial,Object3D,Box3}=THREE;
 const $=id=>document.getElementById(id),clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
@@ -54258,7 +55876,7 @@ function updateUI(){const n=state.nodes[selected];$('name').value=state.name;$('
 function select(i){selected=i;for(let j=0;j<handleMeshes.length;j++)handleMeshes[j].material=j===i?handleOn:handleOff;updateUI()}
 function setTab(tab){if(running&&tab==='build')stopTest();currentTab=tab;for(const el of document.querySelectorAll('.panel'))el.hidden=el.id!==tab;for(const b of document.querySelectorAll('[data-tab]'))b.classList.toggle('active',b.dataset.tab===tab);handles.visible=!running;sound()}
 for(const b of document.querySelectorAll('[data-tab]'))b.onclick=()=>setTab(b.dataset.tab);
-$('add').onclick=()=>{if(running||state.closed||state.nodes.length>=180)return;checkpoint();const n=state.nodes.at(-1),prev=state.nodes.at(-2)||{x:-17,y:4,z:0};let dx=n.x-prev.x,dz=n.z-prev.z,l=Math.hypot(dx,dz);if(l<1){dx=1;dz=0;l=1}state.nodes.push({x:clamp(n.x+dx/l*16,-850,850),y:n.y,z:clamp(n.z+dz/l*16,-850,850)});selected=state.nodes.length-1;changed();sound('build')};
+$('add').onclick=()=>{if(running||state.closed||state.nodes.length>=180)return;checkpoint();const n=state.nodes.at(-1),prev=state.nodes.at(-2)||{x:-17,y:4,z:0};const d=new THREE.Vector3(n.x-prev.x,n.y-prev.y,n.z-prev.z);if(d.lengthSq()<1)d.set(16,0,0);state.nodes.push({x:clamp(n.x+d.x,-850,850),y:clamp(n.y+d.y,1,90),z:clamp(n.z+d.z,-850,850),chain:n.chain===true});selected=state.nodes.length-1;changed();sound('build')};
 $('remove').onclick=()=>{if(running||state.nodes.length<=1)return;checkpoint();state.nodes.splice(selected,1);selected=Math.min(selected,state.nodes.length-1);changed();sound()};$('loop').onclick=()=>{if(running)return;if(!state.closed&&state.nodes.length<3){notify('Add at least three nodes before connecting.');return}checkpoint();state.closed=!state.closed;changed();sound('build')};
 for(const k of ['x','y','z'])$(k).onchange=()=>{const n=+$(k).value;if(!Number.isFinite(n)){updateUI();return}checkpoint();state.nodes[selected][k]=clamp(n,k==='y'?1:-850,k==='y'?90:850);changed()};$('height').onpointerdown=()=>{if(!running)checkpoint()};$('height').onkeydown=e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','PageUp','PageDown'].includes(e.key))checkpoint()};$('height').oninput=()=>{state.nodes[selected].y=+$('height').value;changed()};$('undo').onclick=()=>{if(!history.length||running)return;future.push(copy());state=history.pop();selected=Math.min(selected,state.nodes.length-1);changed()};$('redo').onclick=()=>{if(!future.length||running)return;history.push(copy());state=future.pop();selected=Math.min(selected,state.nodes.length-1);changed()};$('name').onchange=()=>{checkpoint();state.name=$('name').value.trim()||'Untitled coaster';changed()};
 function download(blob,filename){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(u),3000);sound('save')}
@@ -54275,7 +55893,7 @@ const canvas=renderer.domElement;canvas.oncontextmenu=e=>e.preventDefault();canv
 canvas.onpointermove=e=>{if(!pointers.has(e.pointerId)||running)return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointers.size>=2){const p=[...pointers.values()],d=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);if(d>1&&pinchDistance>1)distance=clamp(distance*pinchDistance/d,8,650);pinchDistance=d;cameraOrbit();return}if(!gesture)return;const dx=e.clientX-gesture.x,dy=e.clientY-gesture.y;gesture.x=e.clientX;gesture.y=e.clientY;if(gesture.mode==='node'){cast(e);if(ray.ray.intersectPlane(plane,hit)){const p=hit.clone().add(gesture.offset);state.nodes[selected].x=Math.round(clamp(p.x,-850,850)*2)/2;state.nodes[selected].z=Math.round(clamp(p.z,-850,850)*2)/2;changed()}}else if(gesture.mode==='orbit'){yaw-=dx*.006;pitch=clamp(pitch+dy*.005,.08,1.55);cameraOrbit()}else{const scale=distance*.0014;target.x+=(-dx*Math.cos(yaw)-dy*Math.sin(yaw))*scale;target.z+=(dx*Math.sin(yaw)-dy*Math.cos(yaw))*scale;cameraOrbit()}};
 function pointerEnd(e){pointers.delete(e.pointerId);gesture=null;pinchDistance=0;if(dirty&&prefs.autosave)saveTimer=setTimeout(()=>save(true),1400)}canvas.onpointerup=pointerEnd;canvas.onpointercancel=pointerEnd;canvas.onwheel=e=>{e.preventDefault();if(running)return;distance=clamp(distance*Math.exp(e.deltaY*.001),8,1800);cameraOrbit()};
 window.onresize=()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)};window.addEventListener('keydown',e=>{if(e.target.matches('input'))return;if(e.key==='Escape')stopTest();if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();$(e.shiftKey?'redo':'undo').click()}if(e.key==='Delete'&&currentTab==='build')$('remove').click()});
-function animate(time){requestAnimationFrame(animate);const dt=Math.min((time-lastTime)/1000||0,.045);lastTime=time;for(const h of windmills)h.rotation.z+=dt*.45;skyDome.position.copy(camera.position);updateExplosions(dt);freeCamera(dt);if(crash)crashStep(dt);if(running&&!crash){simulateTrain(dt);if(ride<0)stopTest('The train rolled back to the start of the station.');else if(ride>=length&&!state.closed)beginDerail();else{if(ride>=length)ride%=length;const next=frame(ride/length);updateTrainPose(ride);if(seat){camera.position.copy(next.p).addScaledVector(next.up,1.5).addScaledVector(next.forward,.5);camera.lookAt(next.p.clone().addScaledVector(next.forward,14).addScaledVector(next.up,1.4))}else{const aim=next.p.clone().addScaledVector(next.up,2);camera.position.lerp(next.p.clone().addScaledVector(next.forward,-11).addScaledVector(next.up,6).addScaledVector(next.right,5),1-Math.exp(-dt*5));camera.lookAt(aim)}$('speed').textContent=velocity.toFixed(1)}}const label=$('nodeLabel');label.hidden=running||currentTab!=='build';if(!label.hidden){const p=handleMeshes[selected].position.clone().project(camera);label.style.left=(p.x*.5+.5)*innerWidth+'px';label.style.top=(-p.y*.5+.5)*innerHeight+'px';label.style.visibility=p.z>1||p.z< -1?'hidden':'visible'}if(!running)updateTrainPose(19);for(const t of animatedTrees)t.rotation.z=Math.sin(time*.0007+t.userData.phase)*.009;for(const g of cloudGroups)g.position.x+=dt*.35;for(const wagon of trainGroup.children)for(const r of wagon.userData.riders||[]){r.userData.head.rotation.y=Math.sin(time*.001+r.userData.phase)*.1;for(const arm of r.userData.arms)arm.rotation.x=running&&velocity>16?-2.6:-.8;}billboard();renderer.render(scene,camera)}
+function animate(time){requestAnimationFrame(animate);const dt=Math.min((time-lastTime)/1000||0,.045);lastTime=time;for(const h of windmills)h.rotation.z+=dt*.45;skyDome.position.copy(camera.position);updateExplosions(dt);freeCamera(dt);if(crash)crashStep(dt);if(running&&!crash){simulateTrain(dt);if(ride<0)stopTest('The train rolled back to the start of the station.');else if(ride>=length&&!state.closed)beginDerail();else{if(ride>=length)ride%=length;const next=frame(ride/length);updateTrainPose(ride);$('speed').textContent=velocity.toFixed(1)}}const label=$('nodeLabel');label.hidden=running||currentTab!=='build';if(!label.hidden){const p=handleMeshes[selected].position.clone().project(camera);label.style.left=(p.x*.5+.5)*innerWidth+'px';label.style.top=(-p.y*.5+.5)*innerHeight+'px';label.style.visibility=p.z>1||p.z< -1?'hidden':'visible'}if(!running)updateTrainPose(19);for(const t of animatedTrees)if(t.userData.terrainRotation){t.quaternion.copy(t.userData.terrainRotation);t.rotateZ(Math.sin(time*.0007+t.userData.phase)*.006)}for(const g of cloudGroups)g.position.x+=dt*.35;for(const wagon of trainGroup.children)for(const r of wagon.userData.riders||[]){if(r.userData.ejected)continue;r.userData.head.rotation.y=Math.sin(time*.001+r.userData.phase)*.1;for(const arm of r.userData.arms)arm.rotation.x=running&&velocity>16?-2.6:-.8;}billboard();updateRestoreSystems(dt,time);renderer.render(scene,camera)}
 // Editor fundamentals: free camera, multi-selection, terrain, and physical derailment.
 const chosen=new Set([0]),keys=new Set();let boxMode=false,editDrag=null,lookYaw=0,lookPitch=0,wantYaw=0,wantPitch=0,crash=null;
 const terrainSeed=62831,lerp=(a,b,t)=>a+(b-a)*t;const terrainLandforms=Array.from({length:18},(_,i)=>{const a=i*2.399963,r=140+Math.sqrt((i+.5)/18)*900*.83;return{x:Math.cos(a)*r,z:Math.sin(a)*r,radius:35+(i*37%90),height:(i%3===0?-1:1)*(9+(i*7%19))}});
@@ -54292,9 +55910,9 @@ const baseRebuild=rebuild;rebuild=function(){baseRebuild();for(const i of [...ch
 function paintChosen(){selected=clamp(selected,0,state.nodes.length-1);for(const m of handleMeshes){m.material=chosen.has(m.userData.index)?handleOn:handleOff;m.material.depthTest=false;m.material.depthWrite=false;m.renderOrder=100;m.frustumCulled=false;}handles.updateMatrixWorld(true);$('selection').textContent=chosen.size>1?chosen.size+' NODES SELECTED':'NODE '+String(selected+1).padStart(2,'0')+' SELECTED'}
 const oldSelect=select;select=function(i,add=false){if(!add)chosen.clear();chosen.add(i);oldSelect(i);paintChosen()};
 function syncLook(){const d=camera.getWorldDirection(new THREE.Vector3());lookYaw=wantYaw=Math.atan2(-d.x,-d.z);lookPitch=wantPitch=Math.asin(clamp(d.y,-.999,.999))}
-function freeCamera(dt){if(running||!$('titleScreen').hidden||document.activeElement?.matches('input,select,textarea'))return;const a=1-Math.exp(-dt*12);lookYaw+=(wantYaw-lookYaw)*a;lookPitch+=(wantPitch-lookPitch)*a;const dir=new THREE.Vector3(-Math.sin(lookYaw)*Math.cos(lookPitch),Math.sin(lookPitch),-Math.cos(lookYaw)*Math.cos(lookPitch));camera.lookAt(camera.position.clone().add(dir));const right=new THREE.Vector3().crossVectors(dir,new THREE.Vector3(0,1,0)).normalize(),move=new THREE.Vector3();if(keys.has('KeyW'))move.add(dir);if(keys.has('KeyS'))move.sub(dir);if(keys.has('KeyD'))move.add(right);if(keys.has('KeyA'))move.sub(right);if(keys.has('KeyE'))move.y++;if(keys.has('KeyQ'))move.y--;if(move.lengthSq())camera.position.addScaledVector(move.normalize(),dt*(keys.has('ShiftLeft')?200:100));camera.position.y=Math.max(camera.position.y,terrainHeight(camera.position.x,camera.position.z)+1)}
+function freeCamera(dt){if((running&&followTrain)||!$('titleScreen').hidden||document.activeElement?.matches('input,select,textarea'))return;const a=1-Math.exp(-dt*12);lookYaw+=(wantYaw-lookYaw)*a;lookPitch+=(wantPitch-lookPitch)*a;const dir=new THREE.Vector3(-Math.sin(lookYaw)*Math.cos(lookPitch),Math.sin(lookPitch),-Math.cos(lookYaw)*Math.cos(lookPitch));camera.lookAt(camera.position.clone().add(dir));const right=new THREE.Vector3().crossVectors(dir,new THREE.Vector3(0,1,0)).normalize(),move=new THREE.Vector3();if(keys.has('KeyW'))move.add(dir);if(keys.has('KeyS'))move.sub(dir);if(keys.has('KeyD'))move.add(right);if(keys.has('KeyA'))move.sub(right);if(keys.has('KeyE'))move.y++;if(keys.has('KeyQ'))move.y--;if(move.lengthSq())camera.position.addScaledVector(move.normalize(),dt*(keys.has('ShiftLeft')?+$('fastCamSpeed').value:+$('camSpeed').value));camera.position.y=Math.max(camera.position.y,terrainHeight(camera.position.x,camera.position.z)+1)}
 window.addEventListener('keydown',e=>{if(e.target.matches('input'))return;if(['KeyW','KeyA','KeyS','KeyD','KeyQ','KeyE','ShiftLeft'].includes(e.code)){keys.add(e.code);e.preventDefault()}});window.addEventListener('keyup',e=>keys.delete(e.code));window.addEventListener('blur',()=>{keys.clear();editDrag=null});
-canvas.onpointerdown=e=>{if(running)return;canvas.setPointerCapture(e.pointerId);camera.updateMatrixWorld();handles.updateMatrixWorld(true);cast(e);if(e.button===2){editDrag={kind:'look',x:e.clientX,y:e.clientY};return}if(boxMode){editDrag={kind:'box',x:e.clientX,y:e.clientY,add:e.shiftKey};return}const hits=handles.visible?ray.intersectObjects(handleMeshes):[];if(hits.length){const i=hits[0].object.userData.index;if(!chosen.has(i)||e.shiftKey)select(i,e.shiftKey);else{selected=i;updateUI();paintChosen()}checkpoint();plane.constant=-state.nodes[i].y;ray.ray.intersectPlane(plane,hit);editDrag={kind:'node',origin:hit.clone(),nodes:copy().nodes};}else editDrag={kind:'box',x:e.clientX,y:e.clientY,add:e.shiftKey}};
+canvas.onpointerdown=e=>{if(running)return;canvas.setPointerCapture(e.pointerId);camera.updateMatrixWorld();handles.updateMatrixWorld(true);cast(e);if(e.button===2){editDrag={kind:'look',x:e.clientX,y:e.clientY};return}if(boxMode){editDrag={kind:'box',x:e.clientX,y:e.clientY,add:e.shiftKey};return}const hits=handles.visible?ray.intersectObjects(handleMeshes):[];if(hits.length){const i=hits[0].object.userData.index;if(!chosen.has(i)||e.shiftKey)select(i,e.shiftKey);else{selected=i;updateUI();paintChosen()}if(advancedMove){select(i,e.shiftKey);editDrag=null;return}checkpoint();plane.constant=-state.nodes[i].y;ray.ray.intersectPlane(plane,hit);editDrag={kind:'node',origin:hit.clone(),nodes:copy().nodes};}else editDrag={kind:'box',x:e.clientX,y:e.clientY,add:e.shiftKey}};
 canvas.onpointermove=e=>{if(!editDrag)return;const d=editDrag;if(d.kind==='box'){Object.assign($('selectionRect').style,{display:'block',left:Math.min(d.x,e.clientX)+'px',top:Math.min(d.y,e.clientY)+'px',width:Math.abs(d.x-e.clientX)+'px',height:Math.abs(d.y-e.clientY)+'px'});return}if(d.kind==='node'){cast(e);if(ray.ray.intersectPlane(plane,hit)){const delta=hit.clone().sub(d.origin);for(const i of chosen){state.nodes[i].x=clamp(d.nodes[i].x+delta.x,-850,850);state.nodes[i].z=clamp(d.nodes[i].z+delta.z,-850,850)}changed()}return}const dx=e.clientX-d.x,dy=e.clientY-d.y;d.x=e.clientX;d.y=e.clientY;if(d.kind==='look'){wantYaw-=dx*.003;wantPitch=clamp(wantPitch-dy*.003,-1.5,1.5)}else{const right=new THREE.Vector3(1,0,0).applyQuaternion(camera.quaternion),up=new THREE.Vector3(0,1,0).applyQuaternion(camera.quaternion);camera.position.addScaledVector(right,-dx*.12).addScaledVector(up,dy*.12)}};
 canvas.onpointerup=e=>{if(editDrag?.kind==='box'){const d=editDrag;if(!d.add)chosen.clear();camera.updateMatrixWorld();state.nodes.forEach((n,i)=>{const p=new THREE.Vector3(n.x,n.y,n.z).project(camera),x=(p.x*.5+.5)*innerWidth,y=(.5-p.y*.5)*innerHeight;if(p.z>=-1&&p.z<=1&&x>=Math.min(d.x,e.clientX)&&x<=Math.max(d.x,e.clientX)&&y>=Math.min(d.y,e.clientY)&&y<=Math.max(d.y,e.clientY))chosen.add(i)});if(chosen.size){selected=[...chosen].at(-1);updateUI()}paintChosen()}$('selectionRect').style.display='none';editDrag=null};canvas.onpointercancel=()=>{editDrag=null;$('selectionRect').style.display='none'};canvas.onwheel=e=>{e.preventDefault();if(!running)camera.position.addScaledVector(camera.getWorldDirection(new THREE.Vector3()),-e.deltaY*.06)};
 for(const id of ['home','resetView','focus','top']){const handler=$(id).onclick;$(id).onclick=()=>{handler();syncLook()}}
@@ -54309,7 +55927,7 @@ $('clockwise').onclick=()=>rotateSelection(15);$('counterclockwise').onclick=()=
 
 const debris=[],debrisMat=mat(0x18aeda,.4,.4),debrisGeo=new THREE.BoxGeometry(.25,.2,.35);
 function beginDerail(){if(crash)return;crash={time:0,s:ride,v:velocity,cars:trainGroup.children.map(c=>({c,air:false,v:new THREE.Vector3(),spin:new THREE.Vector3(Math.random()*2-1,Math.random()-.5,Math.random()*2-1)}))};seat=false;$('testStatus').textContent='Derailment · unfinished track';notify('Track ends here! The train has derailed.');sound('build')}
-function crashStep(dt){if(!crash)return;crash.time+=dt;crash.s+=crash.v*dt;for(const b of crash.cars){const d=crash.s-b.c.userData.offset;if(!b.air){if(d<length){const f=frame(clamp(d/length,0,1));b.c.position.copy(f.p).addScaledVector(f.up,.72);b.c.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(f.right.clone().negate(),f.up,f.forward));continue}b.air=true;b.v.copy(frame(1).forward).multiplyScalar(crash.v);b.v.y+=1}b.v.y-=9.81*dt;b.c.position.addScaledVector(b.v,dt);b.c.rotateX(b.spin.x*dt);b.c.rotateZ(b.spin.z*dt);const floor=terrainHeight(b.c.position.x,b.c.position.z)+.7;if(b.c.position.y<floor){b.c.position.y=floor;b.v.y=Math.abs(b.v.y)*.22;b.v.x*=Math.exp(-dt*5);b.v.z*=Math.exp(-dt*5);b.spin.multiplyScalar(Math.exp(-dt*4));if(!b.broken){b.broken=true;explode(b.c.position);b.c.userData.body.rotation.z=.25;for(let j=0;j<18;j++){const m=new THREE.Mesh(debrisGeo,debrisMat);m.position.copy(b.c.position);scene.add(m);debris.push({m,v:new THREE.Vector3((Math.random()-.5)*10,2+Math.random()*5,(Math.random()-.5)*10)})}sound('build')}}}for(const d of debris){d.v.y-=9.81*dt;d.m.position.addScaledVector(d.v,dt);const y=terrainHeight(d.m.position.x,d.m.position.z)+.12;if(d.m.position.y<y){d.m.position.y=y;d.v.y=Math.abs(d.v.y)*.25;d.v.multiplyScalar(.92)}d.m.rotation.x+=dt*d.v.length()}const lead=trainGroup.children[0];camera.position.lerp(lead.position.clone().add(new THREE.Vector3(16,10,16)),1-Math.exp(-dt*2));camera.lookAt(lead.position);if(crash.time>12)$('testStatus').textContent='Train wrecked. End test to rebuild.'}
+function crashStep(dt){if(!crash)return;crash.time+=dt;crash.s+=crash.v*dt;for(const b of crash.cars){const d=crash.s-b.c.userData.offset;if(!b.air){if(d<length){const f=frame(clamp(d/length,0,1));b.c.position.copy(f.p).addScaledVector(f.up,.72);b.c.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(f.right.clone().negate(),f.up,f.forward));continue}b.air=true;b.v.copy(frame(1).forward).multiplyScalar(crash.v);b.v.y+=1}b.v.y-=9.81*dt;b.c.position.addScaledVector(b.v,dt);b.c.rotateX(b.spin.x*dt);b.c.rotateZ(b.spin.z*dt);const floor=terrainHeight(b.c.position.x,b.c.position.z)+.7;if(b.c.position.y<floor){b.c.position.y=floor;b.v.y=Math.abs(b.v.y)*.22;b.v.x*=Math.exp(-dt*5);b.v.z*=Math.exp(-dt*5);b.spin.multiplyScalar(Math.exp(-dt*4));if(!b.broken){b.broken=true;explode(b.c.position);b.c.userData.body.rotation.z=.25;for(let j=0;j<18;j++){const m=new THREE.Mesh(debrisGeo,debrisMat);m.position.copy(b.c.position);scene.add(m);debris.push({m,v:new THREE.Vector3((Math.random()-.5)*10,2+Math.random()*5,(Math.random()-.5)*10)})}sound('build')}}}for(const d of debris){d.v.y-=9.81*dt;d.m.position.addScaledVector(d.v,dt);const y=terrainHeight(d.m.position.x,d.m.position.z)+.12;if(d.m.position.y<y){d.m.position.y=y;d.v.y=Math.abs(d.v.y)*.25;d.v.multiplyScalar(.92)}d.m.rotation.x+=dt*d.v.length()}if(crash.time>12)$('testStatus').textContent='Train wrecked. End test to rebuild.'}
 const baseOverview=overview;overview=function(){baseOverview();syncLook()};
 $('height').oninput=()=>{const delta=+$('height').value-state.nodes[selected].y;for(const i of chosen)state.nodes[i].y=clamp(state.nodes[i].y+delta,1,90);changed()};
 
@@ -54374,7 +55992,7 @@ const desktopDown=canvas.onpointerdown,desktopMove=canvas.onpointermove,desktopU
 function touchPair(){const [a,b]=[...touchPoints.values()];return{x:(a.x+b.x)/2,y:(a.y+b.y)/2,d:Math.hypot(a.x-b.x,a.y-b.y)}}
 function pickTouchNode(e){camera.updateMatrixWorld();let best=30,index=-1;state.nodes.forEach((n,i)=>{const p=new THREE.Vector3(n.x,n.y,n.z).project(camera);if(p.z< -1||p.z>1)return;const d=Math.hypot((p.x*.5+.5)*innerWidth-e.clientX,(.5-p.y*.5)*innerHeight-e.clientY);if(d<best){best=d;index=i}});return index}
 canvas.onpointerdown=e=>{if(e.pointerType!=='touch')return desktopDown(e);e.preventDefault();if(running)return;canvas.setPointerCapture(e.pointerId);touchPoints.set(e.pointerId,{x:e.clientX,y:e.clientY});if(touchPoints.size===2){editDrag=null;$('selectionRect').style.display='none';touchGesture={kind:'two',pair:touchPair()};return}if(touchPoints.size>2)return;if(mobilePower){const i=pickPowerTrack(e);if(i>=0){checkpoint();state.nodes[i].chain=mobilePower==='chain';changed();notify('Track power updated');mobilePower=null;$('cancelPower').hidden=true;mobileModeSet(mobileMode)}else notify('Tap directly on a rail.');touchGesture=null;return}if(mobileMode==='select'){desktopDown({...e,pointerId:e.pointerId,clientX:e.clientX,clientY:e.clientY,button:0,pointerType:'touch',shiftKey:false});editDrag={kind:'box',x:e.clientX,y:e.clientY,add:false};touchGesture={kind:'select'};return}const i=pickTouchNode(e);touchGesture={kind:'pending',x:e.clientX,y:e.clientY,lastX:e.clientX,lastY:e.clientY,index:i,wasSelected:i>=0&&chosen.has(i)};};
-canvas.onpointermove=e=>{if(e.pointerType!=='touch')return desktopMove(e);e.preventDefault();if(!touchPoints.has(e.pointerId)||running)return;touchPoints.set(e.pointerId,{x:e.clientX,y:e.clientY});if(touchPoints.size>=2){const q=touchPair();if(touchGesture?.kind==='two'&&touchGesture.pair){const prev=touchGesture.pair,depth=clamp(camera.position.distanceTo(new THREE.Vector3(state.nodes[selected].x,state.nodes[selected].y,state.nodes[selected].z)),10,500),scale=2*depth*Math.tan(camera.fov*Math.PI/360)/innerHeight;const right=new THREE.Vector3(1,0,0).applyQuaternion(camera.quaternion),up=camera.getWorldDirection(new THREE.Vector3());right.y=0;right.normalize();up.y=0;up.normalize();camera.position.addScaledVector(right,-(q.x-prev.x)*scale).addScaledVector(up,(q.y-prev.y)*scale);camera.position.addScaledVector(camera.getWorldDirection(new THREE.Vector3()),clamp(q.d-prev.d,-40,40)*scale*.8)}touchGesture={kind:'two',pair:q};return}const g=touchGesture;if(!g||g.kind==='two')return;if(g.kind==='select')return desktopMove(e);const moved=Math.hypot(e.clientX-g.x,e.clientY-g.y)>9;if(g.kind==='pending'&&moved){if(mobileMode==='edit'&&g.index>=0&&g.wasSelected){checkpoint();plane.constant=-state.nodes[g.index].y;cast({clientX:g.x,clientY:g.y});ray.ray.intersectPlane(plane,hit);editDrag={kind:'node',origin:hit.clone(),nodes:copy().nodes};g.kind='drag'}else g.kind='look'}if(g.kind==='drag'){desktopMove(e)}else if(g.kind==='look'){wantYaw-=(e.clientX-g.lastX)*.0025;wantPitch=clamp(wantPitch-(e.clientY-g.lastY)*.0025,-1.45,1.45)}g.lastX=e.clientX;g.lastY=e.clientY;};
+canvas.onpointermove=e=>{if(e.pointerType!=='touch')return desktopMove(e);e.preventDefault();if(!touchPoints.has(e.pointerId)||running)return;touchPoints.set(e.pointerId,{x:e.clientX,y:e.clientY});if(touchPoints.size>=2){const q=touchPair();if(touchGesture?.kind==='two'&&touchGesture.pair){const prev=touchGesture.pair,depth=clamp(camera.position.distanceTo(new THREE.Vector3(state.nodes[selected].x,state.nodes[selected].y,state.nodes[selected].z)),10,500),scale=2*depth*Math.tan(camera.fov*Math.PI/360)/innerHeight;const right=new THREE.Vector3(1,0,0).applyQuaternion(camera.quaternion),up=camera.getWorldDirection(new THREE.Vector3());right.y=0;right.normalize();up.y=0;up.normalize();camera.position.addScaledVector(right,-(q.x-prev.x)*scale).addScaledVector(up,(q.y-prev.y)*scale);camera.position.addScaledVector(camera.getWorldDirection(new THREE.Vector3()),clamp(q.d-prev.d,-40,40)*scale*.8)}touchGesture={kind:'two',pair:q};return}const g=touchGesture;if(!g||g.kind==='two')return;if(g.kind==='select')return desktopMove(e);const moved=Math.hypot(e.clientX-g.x,e.clientY-g.y)>9;if(g.kind==='pending'&&moved){if(!advancedMove&&mobileMode==='edit'&&g.index>=0&&g.wasSelected){checkpoint();plane.constant=-state.nodes[g.index].y;cast({clientX:g.x,clientY:g.y});ray.ray.intersectPlane(plane,hit);editDrag={kind:'node',origin:hit.clone(),nodes:copy().nodes};g.kind='drag'}else g.kind='look'}if(g.kind==='drag'){desktopMove(e)}else if(g.kind==='look'){wantYaw-=(e.clientX-g.lastX)*.0025;wantPitch=clamp(wantPitch-(e.clientY-g.lastY)*.0025,-1.45,1.45)}g.lastX=e.clientX;g.lastY=e.clientY;};
 canvas.onpointerup=e=>{if(e.pointerType!=='touch')return desktopUp(e);const g=touchGesture;if(g?.kind==='pending'){if(g.index>=0)select(g.index);else deselectNodes();document.body.classList.remove('sheetOpen')}if(g?.kind==='select')desktopUp(e);touchPoints.delete(e.pointerId);editDrag=null;if(touchPoints.size===1){const p=[...touchPoints.values()][0];touchGesture={kind:'look',x:p.x,y:p.y,lastX:p.x,lastY:p.y,index:-1,wasSelected:false}}else touchGesture=null;$('selectionRect').style.display='none'};
 canvas.onpointercancel=e=>{if(e.pointerType!=='touch')return desktopCancel(e);touchPoints.clear();touchGesture=null;editDrag=null;$('selectionRect').style.display='none'};
 window.addEventListener('blur',()=>{touchPoints.clear();touchGesture=null;editDrag=null});window.addEventListener('resize',syncMobile);
@@ -54398,6 +56016,79 @@ const beforeDesktopUp=canvas.onpointerup;canvas.onpointerup=function(e){beforeDe
 for(const id of ['add','remove','raise','descend','clockwise','counterclockwise','focus']){const action=$(id).onclick;$(id).onclick=(...args)=>{if(!chosen.size)return;return action(...args)}}
 // Open interlocking steel links, alternating face-on and edge-on.
 for(const el of [document.querySelector('header'),document.querySelector('.titleBoard')])for(const side of ['left','right']){const chain=document.createElement('span');chain.className='hangingChain '+side;chain.setAttribute('aria-hidden','true');for(let i=0;i<5;i++)chain.append(document.createElement('i'));el.append(chain)}
+
+// Original v30 station and skeleton geometry.
+function clearStationVisuals(){clear(station)}
+function restoreStation(){clearStationVisuals();const d=({gap:1.25,deck:3.3}),mat=false?new THREE.MeshStandardMaterial({color:0x755139,roughness:.8}):matPlatform;station.userData.dimensions=d;for(const side of [-1,1]){const z=side*(d.gap+d.deck/2);addBox(station,[34,.65,d.deck],[0,.1,z],mat);addBox(station,[34,.055,.2],[0,.46,side*(d.gap+.14)],matPlatformEdge);for(let x=-14;x<=14;x+=4){addBox(station,[1.4,.025,.14],[x,.45,side*(d.gap+.38)],matPlatformGlow);const outside=side*(d.gap+d.deck-.12);beamBetween(station,new THREE.Vector3(x,.43,outside),new THREE.Vector3(x,1.65,outside),.05,matPlatformRail);if(x<14)beamBetween(station,new THREE.Vector3(x,1.55,outside),new THREE.Vector3(x+4,1.55,outside),.035,matPlatformRail)}for(const x of [-12,0,12]){const outside=side*(d.gap+d.deck-.35);beamBetween(station,new THREE.Vector3(x,.43,outside),new THREE.Vector3(x,2.2,outside),.05,matPlatformRail);const light=new THREE.Mesh(new THREE.SphereGeometry(.14,10,8),matPlatformGlow);light.position.set(x,2.2,outside);station.add(light)}}if(['inverted','suspended','flying'].includes('classic')){const z=d.gap+d.deck-.35;for(const x of [-14,-7,0,7,14]){for(const side of [-1,1])beamBetween(station,new THREE.Vector3(x,.43,side*z),new THREE.Vector3(x,4.3,side*z),.085,matPlatformRail);beamBetween(station,new THREE.Vector3(x,4.3,-z),new THREE.Vector3(x,4.3,z),.085,matPlatformRail)}}}
+function restoreSkeleton(r){const u=r.userData;if(u.dead)return;u.dead=true;u.fainted=false;u.state='skeleton';r.traverse(o=>{if(o.isMesh)o.visible=false});const bone=new THREE.MeshStandardMaterial({color:0xf4ebd3,roughness:.8}),black=new THREE.MeshBasicMaterial({color:0x1a2330});const rod=(parent,a,b,radius=.025)=>beamBetween(parent,new THREE.Vector3(...a),new THREE.Vector3(...b),radius,bone);rod(u.upper,[0,.03,0],[0,.46,0],.035);for(let i=0;i<4;i++){const rib=new THREE.Mesh(new THREE.TorusGeometry(.12-i*.012,.018,6,14,Math.PI*1.75),bone);rib.position.set(0,.14+i*.075,.015);rib.scale.y=.45;u.upper.add(rib)}rod(u.upper,[-.18,.42,0],[.18,.42,0]);const skull=new THREE.Mesh(new THREE.SphereGeometry(.17,12,9),bone);u.head.add(skull);for(const x of [-.065,.065]){const eye=new THREE.Mesh(new THREE.SphereGeometry(.047,8,6),black);eye.scale.z=.3;eye.position.set(x,.018,.155);u.head.add(eye)}addBox(u.head,[.12,.06,.08],[0,-.11,.1],bone);for(const x of [-.04,0,.04])addBox(u.head,[.008,.04,.01],[x,-.1,.148],black);for(const a of u.arms){rod(a,[0,0,0],[0,-.3,.02],.026);const hand=new THREE.Mesh(new THREE.SphereGeometry(.045,8,6),bone);hand.position.set(0,-.31,.02);a.add(hand)}for(const leg of u.legs){rod(leg,[0,0,0],[0,0,.23]);rod(leg,[0,0,.23],[0,-.3,.23]);rod(leg,[0,-.3,.23],[0,-.3,.4]);}u.eyes=[];u.closedEyes=[];u.mouth.visible=false;r.updateWorldMatrix(true,false);r.userData.skeletonCreated=true}
+restoreStation();station.position.y=4.25;
+for(const x of [-15,-9,-3,3,9,15])for(const z of [-2.9,2.9]){const floor=terrainHeight(x,z);box(station,x,(floor-4.25)/2,z,.36,4.25-floor,.36,matPlatformRail);box(station,x,floor-4.25+.12,z,1.3,.24,1.3,concreteMat)}
+railMat.color.setHex(0xf29143);railMat.metalness=.65;railMat.roughness=.27;tieMat.color.setHex(0x285b69);supportMat.color.setHex(0x238f9b);supportMat.metalness=.65;supportMat.roughness=.35;
+for(const [id,material] of [['railColor',railMat],['supportColor',supportMat]])$(id).oninput=()=>{material.color.set($(id).value)};
+
+// Surface frames and footprint clearance: scenery tilts with the land, without buried corners.
+function conformScenery(entry){const o=entry.obj,x=o.position.x,z=o.position.z,yaw=o.rotation.y;const r=Math.max(.3,Math.min(entry.r,4));const normal=new THREE.Vector3(terrainHeight(x-r,z)-terrainHeight(x+r,z),2*r,terrainHeight(x,z-r)-terrainHeight(x,z+r)).normalize();const q=new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0,1,0),normal).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0),yaw));o.position.set(0,0,0);o.quaternion.identity();o.updateMatrixWorld(true);const bounds=new THREE.Box3().setFromObject(o);o.quaternion.copy(q);o.position.set(x,terrainHeight(x,z),z);let lift=-Infinity;const tree=animatedTrees.includes(o);for(let ix=0;ix<=4;ix++)for(let iz=0;iz<=4;iz++){const p=new THREE.Vector3(tree?(ix/4-.5)*.5:lerp(bounds.min.x,bounds.max.x,ix/4),bounds.min.y,tree?(iz/4-.5)*.5:lerp(bounds.min.z,bounds.max.z,iz/4)).applyQuaternion(q).add(o.position);lift=Math.max(lift,terrainHeight(p.x,p.z)-p.y)}o.position.y+=lift+.025;o.userData.terrainRotation=q.clone();o.updateMatrixWorld(true)}
+windmills.length=0;
+for(const g of newScenery.children)if(g.userData.sceneryType==='windmill'){clear(g);const masonry=mat(0xe2cfaa),sail=mat(0xf1e6c8),wood=mat(0x725039),cap=mat(0x386d73);const tower=new THREE.Mesh(new THREE.CylinderGeometry(1.3,2.1,7.3,12),masonry);tower.position.y=3.65;g.add(tower);const top=new THREE.Mesh(new THREE.ConeGeometry(1.9,2.1,12),cap);top.position.y=8.15;g.add(top);box(g,0,.95,2.02,.9,1.9,.13,wood);for(const y of [2.7,4.5,6.1]){box(g,0,y,1.73,.65,.85,.15,darkMat);box(g,0,y,1.84,.07,.85,.07,sail)}const rotor=new THREE.Group();rotor.position.set(0,6.4,2.1);g.add(rotor);for(let k=0;k<4;k++){const blade=new THREE.Group();for(const x of [-.33,.33])box(blade,x,2.25,0,.09,3.7,.14,wood);for(let y=.5;y<4.1;y+=.36)box(blade,0,y,0,.76,.11,.15,wood);box(blade,.08,2.5,.09,.52,2.7,.045,sail);blade.rotation.z=k*Math.PI/2;rotor.add(blade)}const hub=new THREE.Mesh(new THREE.SphereGeometry(.32,12,8),cap);rotor.add(hub);windmills.push(rotor)}
+for(const entry of placed)conformScenery(entry);
+
+// Old lift rails, elongated chain links, teeth and maintenance walkway.
+const liftSteel=mat(0x93aab2,.3,.8),liftLinks=mat(0xe5ba62,.3,.7),liftWalk=mat(0x465f66,.65,.5);
+rebuildChains=function(){clear(chainGroup);const sets={links:[],rails:[],walk:[],posts:[]};state.nodes.forEach((n,i)=>{if(!n.chain)return;const ps=segmentPoints(i),c=new THREE.CatmullRomCurve3(ps),len=c.getLength(),steps=Math.max(2,Math.min(900,Math.ceil(len/.65)));for(let j=0;j<steps;j++){const u=(j+.5)/steps,p=c.getPointAt(u),forward=c.getTangentAt(u).normalize(),right=new THREE.Vector3().crossVectors(forward,new THREE.Vector3(0,1,0)).normalize(),up=new THREE.Vector3().crossVectors(right,forward).normalize(),q=new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(right,up,forward));sets.links.push({p:p.clone().addScaledVector(up,-.12),q:q.clone().multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),Math.PI/2)),scale:new THREE.Vector3(1,1.7,1)});for(const side of [-1,1])sets.rails.push({p:p.clone().addScaledVector(right,side*.18).addScaledVector(up,-.25),q,scale:new THREE.Vector3(.07,.1,len/steps+.02)});if(j%3===0){sets.walk.push({p:p.clone().addScaledVector(right,1.65).addScaledVector(up,-.36),q,scale:new THREE.Vector3(.7,.06,len/steps*3)});sets.posts.push({p:p.clone().addScaledVector(right,2).addScaledVector(up,.2),q,scale:new THREE.Vector3(.06,1.15,.06)});sets.posts.push({p:p.clone().addScaledVector(right,2).addScaledVector(up,.8),q,scale:new THREE.Vector3(.06,.06,len/steps*3)})}}});const d=new THREE.Object3D();for(const [key,items]of Object.entries(sets)){if(!items.length)continue;const mesh=new THREE.InstancedMesh(key==='links'?new THREE.TorusGeometry(.14,.035,6,10):new THREE.BoxGeometry(1,1,1),key==='links'?liftLinks:key==='walk'?liftWalk:liftSteel,items.length);items.forEach((v,i)=>{d.position.copy(v.p);d.quaternion.copy(v.q);d.scale.copy(v.scale);d.updateMatrix();mesh.setMatrixAt(i,d.matrix)});mesh.castShadow=true;chainGroup.add(mesh)}};
+// Screen-space distance to each projected rail segment gives a generous drop target.
+pickPowerTrack=function(e){camera.updateMatrixWorld();let best=touchLayout()?38:24,found=-1;const count=Math.min(5000,Math.max(80,Math.ceil(length/.8)));let prev=null;for(let j=0;j<=count;j++){const t=j/count,p=curve.getPoint(t).project(camera);if(p.z< -1||p.z>1){prev=null;continue}const q={x:(p.x*.5+.5)*innerWidth,y:(.5-p.y*.5)*innerHeight,t};if(prev){const dx=q.x-prev.x,dy=q.y-prev.y,u=clamp(((e.clientX-prev.x)*dx+(e.clientY-prev.y)*dy)/(dx*dx+dy*dy||1),0,1),d=Math.hypot(e.clientX-prev.x-u*dx,e.clientY-prev.y-u*dy);if(d<best){const ix=segmentIndex(lerp(prev.t,t,u));if(ix>=0){best=d;found=ix}}}prev=q}return found};
+
+let advancedMove=false,gizmoSnapshot=null,gizmoStart=null;
+const nodePivot=new THREE.Object3D();scene.add(nodePivot);const transform=new TransformControls(camera,canvas);transform.setSize(.9);transform.setMode('translate');transform.enabled=false;scene.add(transform.getHelper());
+function syncGizmo(){if(advancedMove&&chosen.size&&!running&&$('titleScreen').hidden){if(!transform.dragging)nodePivot.position.copy(handleMeshes[selected].position);transform.enabled=true;transform.attach(nodePivot)}else{transform.detach();transform.enabled=false}}
+$('advancedMove').onclick=()=>{advancedMove=!advancedMove;editDrag=null;touchGesture=null;$('advancedMove').textContent=advancedMove?'Return to Simple mode':'Advanced Move';$('advancedMove').setAttribute('aria-pressed',String(advancedMove));syncGizmo()};
+transform.addEventListener('mouseDown',()=>{checkpoint();gizmoSnapshot=copy().nodes;gizmoStart=nodePivot.position.clone();editDrag=null;touchGesture=null;touchPoints.clear()});
+transform.addEventListener('objectChange',()=>{if(!gizmoSnapshot||!gizmoStart)return;const d=nodePivot.position.clone().sub(gizmoStart);for(const i of chosen){const old=gizmoSnapshot[i];state.nodes[i]={...state.nodes[i],x:clamp(old.x+d.x,-850,850),y:clamp(old.y+d.y,1,90),z:clamp(old.z+d.z,-850,850)}}changed()});
+transform.addEventListener('mouseUp',()=>{gizmoSnapshot=null;gizmoStart=null;syncGizmo()});
+const oldBillboard2=billboard;billboard=function(){oldBillboard2();syncGizmo()};
+
+let followTrain=false;const followOrbit={yaw:.55,pitch:.42,distance:23};let cameraMouse=false,followTouch=null;
+function updateFollowCamera(dt){const c=trainGroup.children[0];if(!c)return;const dir=new THREE.Vector3(0,0,1).applyQuaternion(c.quaternion),heading=crash?(crash.heading||0):Math.atan2(dir.x,dir.z),a=heading+Math.PI+followOrbit.yaw,cp=Math.cos(followOrbit.pitch),aim=c.position.clone().add(new THREE.Vector3(0,.7,0)),offset=new THREE.Vector3(Math.sin(a)*cp,Math.sin(followOrbit.pitch),Math.cos(a)*cp).multiplyScalar(followOrbit.distance);camera.position.copy(aim).add(offset);camera.position.y=Math.max(terrainHeight(camera.position.x,camera.position.z)+2,camera.position.y);camera.up.set(0,1,0);camera.lookAt(aim)}
+$('followTrainBtn').onclick=()=>{followTrain=!followTrain;$('followTrainBtn').textContent='Follow Train: '+(followTrain?'ON':'OFF');$('followTrainBtn').setAttribute('aria-pressed',String(followTrain));if(!followTrain)syncLook();else notify('Right-drag to orbit · Scroll to zoom')};
+const restoredDown=canvas.onpointerdown,restoredMove=canvas.onpointermove,restoredUp=canvas.onpointerup;
+canvas.onpointerdown=e=>{if(transform.dragging||e.button===0&&advancedMove&&transform.axis)return;if(e.pointerType!=='touch'&&e.button===2){e.preventDefault();cameraMouse=true;editDrag=null;Promise.resolve(canvas.requestPointerLock?.()).catch(()=>{cameraMouse=false;notify('Mouse lock was blocked. Click the scene and try right-drag again.')});return}if(running&&e.pointerType==='touch'){touchPoints.set(e.pointerId,{x:e.clientX,y:e.clientY});canvas.setPointerCapture(e.pointerId);followTouch={x:e.clientX,y:e.clientY,...(touchPoints.size>=2?{d:touchPair().d,center:touchPair()}:{d:0})};return}restoredDown(e)};
+canvas.onpointermove=e=>{if(transform.dragging||document.pointerLockElement===canvas||cameraMouse)return;if(running&&e.pointerType==='touch'&&followTouch){touchPoints.set(e.pointerId,{x:e.clientX,y:e.clientY});if(touchPoints.size>=2){const pair=touchPair(),d=pair.d;if(followTouch.d>0){if(followTrain)followOrbit.distance=clamp(followOrbit.distance*followTouch.d/d,6,100);else{camera.position.addScaledVector(camera.getWorldDirection(new THREE.Vector3()),(d-followTouch.d)*.08);if(followTouch.center){const right=new THREE.Vector3().setFromMatrixColumn(camera.matrix,0),forward=camera.getWorldDirection(new THREE.Vector3());forward.y=0;forward.normalize();camera.position.addScaledVector(right,-(pair.x-followTouch.center.x)*.035).addScaledVector(forward,(pair.y-followTouch.center.y)*.035)}}}followTouch.d=d;followTouch.center=pair}else if(followTrain){followOrbit.yaw-=(e.clientX-followTouch.x)*.004;followOrbit.pitch=clamp(followOrbit.pitch+(e.clientY-followTouch.y)*.003,-.15,1.3)}else{wantYaw-=(e.clientX-followTouch.x)*.00235;wantPitch=clamp(wantPitch-(e.clientY-followTouch.y)*.00235,-1.5,1.5)}followTouch.x=e.clientX;followTouch.y=e.clientY;return}restoredMove(e)};
+function releaseCamera(){cameraMouse=false;if(document.pointerLockElement===canvas)document.exitPointerLock?.()}
+canvas.onpointerup=e=>{if(e.button===2){releaseCamera();return}if(running&&e.pointerType==='touch'){touchPoints.delete(e.pointerId);followTouch=touchPoints.size?{...[...touchPoints.values()][0],d:0}:null;return}restoredUp(e)};
+document.addEventListener('mousemove',e=>{if(!cameraMouse||document.pointerLockElement!==canvas)return;const dx=clamp(e.movementX,-120,120),dy=clamp(e.movementY,-120,120);if(followTrain&&running){followOrbit.yaw-=dx*.004;followOrbit.pitch=clamp(followOrbit.pitch+dy*.003,-.15,1.3)}else{wantYaw-=dx*.00235;wantPitch=clamp(wantPitch-dy*.00235,-1.5,1.5)}});
+document.addEventListener('mouseup',e=>{if(e.button===2)releaseCamera()});document.addEventListener('pointerlockchange',()=>{if(document.pointerLockElement!==canvas)cameraMouse=false;else if(!cameraMouse)document.exitPointerLock?.()});window.addEventListener('blur',releaseCamera);canvas.addEventListener('lostpointercapture',()=>{editDrag=null});
+const originalWheel2=canvas.onwheel;canvas.onwheel=e=>{if(running&&followTrain){e.preventDefault();followOrbit.distance=clamp(followOrbit.distance*Math.exp(e.deltaY*.001),6,100)}else if(running){e.preventDefault();camera.position.addScaledVector(camera.getWorldDirection(new THREE.Vector3()),-e.deltaY*.06)}else originalWheel2(e)};
+// Break actual cart meshes into physical wreckage and release every rider.
+const wreckage=[],loosePeople=[],riderResets=[];const cartColor=trainGroup.children[0].userData.body.children.find(o=>o.material?.roughness===.27)?.material.color||new THREE.Color(0xe57e42);debrisMat.color.copy(cartColor);
+function uniqueFadeMaterials(o){o.traverse(m=>{if(m.isMesh){m.material=Array.isArray(m.material)?m.material.map(a=>a.clone()):m.material.clone();for(const a of Array.isArray(m.material)?m.material:[m.material]){a.transparent=true;a.depthWrite=false}}})}
+function setFade(o,opacity){o.traverse(m=>{if(m.isMesh)for(const a of Array.isArray(m.material)?m.material:[m.material])a.opacity=opacity})}
+function releaseRiders(){scene.updateMatrixWorld(true);for(const c of trainGroup.children)for(const r of c.userData.riders||[]){const originals=[];r.traverse(m=>{if(m.isMesh)originals.push({m,visible:m.visible,material:m.material})});riderResets.push({r,parent:r.parent,p:r.position.clone(),q:r.quaternion.clone(),scale:r.scale.clone(),originals,all:new Set([r,...getDescendants(r)])});scene.attach(r);r.userData.ejected=true;const v=new THREE.Vector3(0,0,1).applyQuaternion(c.quaternion).multiplyScalar(velocity);v.add(new THREE.Vector3((Math.random()-.5)*4,3+Math.random()*3,(Math.random()-.5)*4));loosePeople.push({r,v,spin:new THREE.Vector3(Math.random()*4-2,Math.random()*4-2,Math.random()*4-2),age:0,landed:false,fade:false})}}
+function getDescendants(o){const result=[];o.traverse(c=>{if(c!==o)result.push(c)});return result}
+const oldDerail2=beginDerail;beginDerail=function(groundHit=false){if(crash)return;oldDerail2();if(groundHit)for(const b of crash.cars){b.air=true;b.v.set(0,0,velocity).applyQuaternion(b.c.quaternion);b.v.y+=1}crash.heading=Math.atan2(frame(1).forward.x,frame(1).forward.z);releaseRiders()};
+function fractureCart(c,v){c.updateMatrixWorld(true);const pieces=[];c.userData.body.traverse(m=>{if(m.isMesh&&m.visible)pieces.push(m)});for(const original of pieces){const m=new THREE.Mesh(original.geometry,Array.isArray(original.material)?original.material.map(a=>a.clone()):original.material.clone());original.matrixWorld.decompose(m.position,m.quaternion,m.scale);m.castShadow=true;m.material.transparent=true;m.material.depthWrite=false;scene.add(m);wreckage.push({m,v:v.clone().multiplyScalar(.35).add(new THREE.Vector3((Math.random()-.5)*8,2+Math.random()*6,(Math.random()-.5)*8)),spin:new THREE.Vector3(Math.random()*6,Math.random()*6,Math.random()*6),age:0})}c.userData.body.visible=false;for(let i=0;i<12;i++){const m=new THREE.Mesh(debrisGeo,debrisMat.clone());m.position.copy(c.position);m.material.transparent=true;m.material.depthWrite=false;scene.add(m);wreckage.push({m,v:new THREE.Vector3((Math.random()-.5)*12,3+Math.random()*6,(Math.random()-.5)*12),spin:new THREE.Vector3(4,5,3),age:0})}}
+crashStep=function(dt){if(!crash)return;crash.time+=dt;crash.s+=Math.max(2,crash.v)*dt;for(const b of crash.cars){if(b.broken)continue;const d=crash.s-b.c.userData.offset;if(!b.air){if(d<length){const f=frame(clamp(d/length,0,1));b.c.position.copy(f.p).addScaledVector(f.up,.72);b.c.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(f.right.clone().negate(),f.up,f.forward));continue}b.air=true;b.v.copy(frame(1).forward).multiplyScalar(crash.v);b.v.y+=1}b.v.y-=9.80665*dt;b.c.position.addScaledVector(b.v,dt);b.c.rotateX(b.spin.x*dt);b.c.rotateZ(b.spin.z*dt);const bounds=new THREE.Box3().setFromObject(b.c),floor=terrainHeight(b.c.position.x,b.c.position.z);if(bounds.min.y<=floor){b.c.position.y+=floor-bounds.min.y;b.broken=true;explode(b.c.position);fractureCart(b.c,b.v)}}if(crash.cars.every(b=>b.broken))$('testStatus').textContent='Train wrecked · wreckage fades away · End test to rebuild.'};
+function updateWreckage(dt){for(let i=wreckage.length-1;i>=0;i--){const w=wreckage[i];w.age+=dt;w.v.y-=9.80665*dt;w.m.position.addScaledVector(w.v,dt);w.m.rotateX(w.spin.x*dt);w.m.rotateZ(w.spin.z*dt);const floor=terrainHeight(w.m.position.x,w.m.position.z)+.15;if(w.m.position.y<floor){w.m.position.y=floor;w.v.y=Math.abs(w.v.y)*.2;w.v.x*=Math.exp(-dt*5);w.v.z*=Math.exp(-dt*5);w.spin.multiplyScalar(Math.exp(-dt*5))}setFade(w.m,1-clamp((w.age-4)/3,0,1));if(w.age>=7){w.m.removeFromParent();for(const m of Array.isArray(w.m.material)?w.m.material:[w.m.material])m.dispose();wreckage.splice(i,1)}}for(let i=loosePeople.length-1;i>=0;i--){const p=loosePeople[i];p.v.y-=9.80665*dt;p.r.position.addScaledVector(p.v,dt);if(!p.landed){p.r.rotateX(p.spin.x*dt);p.r.rotateZ(p.spin.z*dt)}const floor=terrainHeight(p.r.position.x,p.r.position.z)+.4;if(p.r.position.y<=floor){p.r.position.y=floor;p.v.y=Math.abs(p.v.y)*.12;p.v.x*=Math.exp(-dt*5);p.v.z*=Math.exp(-dt*5);if(!p.landed){p.landed=true;restoreSkeleton(p.r);uniqueFadeMaterials(p.r)}}if(p.landed){p.age+=dt;setFade(p.r,1-clamp((p.age-4)/3,0,1));if(p.age>=7){p.r.visible=false;loosePeople.splice(i,1)}}}}
+function resetWreckage(){for(const w of wreckage){w.m.removeFromParent();for(const a of Array.isArray(w.m.material)?w.m.material:[w.m.material])a.dispose()}wreckage.length=0;loosePeople.length=0;for(const saved of riderResets){const {r}=saved;for(const o of getDescendants(r))if(!saved.all.has(o)){o.removeFromParent();o.geometry?.dispose();o.material?.dispose()}for(const o of saved.originals){if(o.m.material!==o.material)o.m.material.dispose();o.m.material=o.material;o.m.visible=o.visible}saved.parent.add(r);r.position.copy(saved.p);r.quaternion.copy(saved.q);r.scale.copy(saved.scale);r.visible=true;r.userData.dead=false;r.userData.ejected=false;r.userData.state='calm'}riderResets.length=0;for(const c of trainGroup.children)c.userData.body.visible=true}
+const previousStop2=stopTest;stopTest=function(message){releaseCamera();resetWreckage();previousStop2(message);if(savedCamera.freePosition){camera.position.copy(savedCamera.freePosition);camera.quaternion.copy(savedCamera.freeQuaternion);syncLook()}syncGizmo();$('toolbarTest').textContent='▷ Test';$('toolbarTest').setAttribute('aria-pressed','false')};$('stop').onclick=()=>stopTest();$('touchStop').onclick=()=>stopTest();
+const previousStart2=startTest;startTest=function(){savedCamera.freePosition=camera.position.clone();savedCamera.freeQuaternion=camera.quaternion.clone();previousStart2();syncGizmo();$('toolbarTest').textContent='■ End test';$('toolbarTest').setAttribute('aria-pressed','true')};$('start').onclick=startTest;
+
+// One familiar top toolbar; Build Stuff holds the existing editor capabilities.
+function openBoard(tab){const same=!$(tab).hidden&&(!touchLayout()||document.body.classList.contains('sheetOpen'));for(const el of document.querySelectorAll('.panel'))el.hidden=true;if(!same){setTab(tab);document.body.classList.add('sheetOpen')}else document.body.classList.remove('sheetOpen');$('buildStuff').setAttribute('aria-expanded',String(!same&&tab==='build'))}
+$('buildStuff').onclick=()=>openBoard('build');$('optionsButton').onclick=()=>openBoard('settings');$('myCoasters').onclick=()=>{stopTest();showMenuPage('savedPage');renderNamed();$('titleScreen').hidden=false};$('toolbarTest').onclick=()=>running?stopTest():startTest();
+$('closeSheet').onclick=()=>{document.body.classList.remove('sheetOpen');for(const p of document.querySelectorAll('.panel'))p.hidden=true};
+$('chase').textContent='Follow Train';$('chase').onclick=()=>$('followTrainBtn').click();
+function showMenuPage(id){for(const k of ['menuHub','mapPage','savedPage'])$(k).hidden=k!==id}
+$('newCoasterMenu').onclick=()=>showMenuPage('mapPage');$('savedMenu').onclick=()=>{renderNamed();showMenuPage('savedPage')};$('menuBack').onclick=$('savesBack').onclick=()=>showMenuPage('menuHub');$('menuButton').onclick=()=>{stopTest();showMenuPage('menuHub');$('titleScreen').hidden=false};
+$('insertNode').onclick=()=>{if(running||!chosen.size||state.nodes.length>=180)return;checkpoint();const a=state.nodes[selected],b=state.nodes[selected+1];if(!b){$('add').onclick();return}state.nodes.splice(selected+1,0,{x:(a.x+b.x)/2,y:(a.y+b.y)/2,z:(a.z+b.z)/2,chain:b.chain});selected++;chosen.clear();chosen.add(selected);changed()};
+$('smoothRide').onclick=()=>{if(running||state.nodes.length<3)return;checkpoint();const old=copy().nodes;for(let i=1;i<old.length-1;i++)for(const key of ['x','y','z'])state.nodes[i][key]=lerp(old[i][key],(old[i-1][key]+old[i+1][key])/2,.25);changed();notify('Smoothed the ride · Undo to restore')};
+$('cleanNodes').onclick=()=>{if(running)return;const next=state.nodes.filter((n,i,a)=>i===0||i===a.length-1||n.chain!==a[i-1].chain||Math.hypot(n.x-a[i-1].x,n.y-a[i-1].y,n.z-a[i-1].z)>.5);if(next.length===state.nodes.length){notify('No duplicate nodes to remove.');return}checkpoint();state.nodes=next;selected=Math.min(selected,next.length-1);chosen.clear();chosen.add(selected);changed()};
+// Put test controls and file tools in the workshop, with their original working IDs.
+for(const [id,label] of [['test','Testing'],['files','Files & autosaves']]){const detail=document.createElement('details'),summary=document.createElement('summary');summary.textContent=label;detail.append(summary);const section=$(id);while(section.firstChild)detail.append(section.firstChild);$('build').append(detail)}
+for(const board of document.querySelectorAll('header,.titleBoard')){for(const old of board.querySelectorAll('.hangingChain'))old.remove();for(const side of ['left','right']){const chain=document.createElement('span');chain.className='hangingChain '+side;chain.setAttribute('aria-hidden','true');for(let i=0;i<5;i++)chain.append(document.createElement('i'));board.append(chain)}}
+// Genuine 3D rotating Plains map diorama, rendered only while choosing a map.
+const miniScene=new THREE.Scene();miniScene.background=new THREE.Color(0x95d7f4);miniScene.add(new THREE.HemisphereLight(0xffffff,0x4e7136,2.6));const miniSun=new THREE.DirectionalLight(0xffefd4,3);miniSun.position.set(-10,20,5);miniScene.add(miniSun);const miniLand=new THREE.Group();miniScene.add(miniLand);const miniGround=new THREE.Mesh(new THREE.CylinderGeometry(10,10.5,1,48),mat(0x80b64b));miniGround.position.y=-.5;miniLand.add(miniGround);for(const [x,z,h]of [[-5,-3,2.4],[4,-4,2],[-6,4,1.5]]){const hill=new THREE.Mesh(new THREE.SphereGeometry(3,18,10),mat(0x73a84b));hill.scale.y=h/3;hill.position.set(x,-.1,z);miniLand.add(hill)}for(let i=0;i<14;i++){const a=i*2.3999,r=5+i%4,g=new THREE.Group();box(g,0,.6,0,.15,1.2,.15,timber);const crown=new THREE.Mesh(new THREE.ConeGeometry(.7,1.7,7),leafGreen);crown.position.y=1.65;g.add(crown);g.position.set(Math.cos(a)*r,.2,Math.sin(a)*r);miniLand.add(g)}const miniTrack=new THREE.CatmullRomCurve3([new THREE.Vector3(-6,1,1),new THREE.Vector3(-2,1,1),new THREE.Vector3(2,5,0),new THREE.Vector3(6,1,-2),new THREE.Vector3(4,1,-6)]);miniLand.add(new THREE.Mesh(new THREE.TubeGeometry(miniTrack,90,.14,8,false),railMat));for(let i=0;i<12;i++){const p=miniTrack.getPointAt(i/11);segment(miniLand,new THREE.Vector3(p.x,0,p.z),p,.09,supportMat)}box(miniLand,-4,.5,1,4,.6,1.7,timber);const miniCamera=new THREE.PerspectiveCamera(36,2,.1,100);miniCamera.position.set(21,16,22);miniCamera.lookAt(0,1,0);let miniRenderer=null;try{miniRenderer=new THREE.WebGLRenderer({antialias:true,alpha:false});miniRenderer.setPixelRatio(Math.min(devicePixelRatio,1.5));$('plainsPreview').append(miniRenderer.domElement)}catch{}
+let lastPreviewFrame=0;
+function updateRestoreSystems(dt,time){if(running&&!crash){const hitGround=trainGroup.children.some(c=>{const p=c.position;return p.y-.5<=terrainHeight(p.x,p.z)});if(hitGround)beginDerail(true)}updateWreckage(dt);if(running&&followTrain)updateFollowCamera(dt);if(miniRenderer&&!$('titleScreen').hidden&&!$('mapPage').hidden&&time-lastPreviewFrame>50){lastPreviewFrame=time;const w=$('plainsPreview').clientWidth||320,h=$('plainsPreview').clientHeight||180;miniRenderer.setSize(w,h,false);miniCamera.aspect=w/h;miniCamera.updateProjectionMatrix();miniLand.rotation.y=time*.0001;miniRenderer.render(miniScene,miniCamera)}}
 
 rebuild();updateUI();renderSaves();overview();syncLook();$('loading').remove();requestAnimationFrame(animate);setInterval(()=>{if(dirty&&prefs.autosave)save(true)},20000);
 // A small read-only inspection surface for checking imported designs and build state.
